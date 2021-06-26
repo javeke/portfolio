@@ -4,8 +4,14 @@ set -e # abort on errors
 
 npm run build
 
+cd dist
+
+git init
+
 git add .
 
-git commit -m "deploy"
+git commit -m "deploy"  
 
-git push origin master
+git push -f git@github.com:javeke/javeke.github.io.git master
+
+cd -

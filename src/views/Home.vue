@@ -4,11 +4,18 @@
       <p class="main-greeting">Hi!🙂 I'm</p>
       <p class="main-name"> Javier Bryan</p>
     </section>
-    <section class="description">
+    <section class="bg-dark description">
       <div class="container description-container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 col-sm-12 order-lg-1 description-col">
+        <div class="row">
+          <div class="col">
             <div class="intro-container fade show"><h3 class="intro">About</h3></div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-sm-12 image-col">
+            <img src="../assets/profile.jpg" alt="body-picture" class="body-picture">
+          </div>
+          <div class="col-lg-6 col-sm-12 description-col">
             <p>An aspiring robotics engineer and software developer.👨‍💻</p>
             <p>I am a Chancellorite🦁 and Manchester United⚽ fan who has a passion for computer systems development. I believe in bring our
               most creative and imaginative thoughts into reality as I do believe knowledge is an omnipotent tool when placed in the right hands.
@@ -28,28 +35,25 @@
               <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.facebook.com/javierbryan22"> <i class="bi bi-facebook"> </i></a> </button>
             </div> 
           </div>
-          <div class="col-lg-6 col-sm-12 order-lg-12 image-col">
-            <img src="../assets/profile.jpg" alt="body-picture" class="body-picture">
-          </div>
         </div>
       </div>
     </section>
-    <section class="bg-dark services">
+    <section class="services">
       <div class="container">
         <div class="row service-row align-items-center">
           <div class="col">
-            <h5>What I do</h5>
+            <h5 class="what-i-do">What I do</h5>
             <h3 class="text-warning">My services</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div class="card bg-dark text-warning">
+            <div class="card bg-transparent text-warning mb-5">
               <div class="card-header">
                 <i class="bi bi-cpu"></i>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Embedded Systems Development </h5>
+                <h5 class="card-title">Embedded Systems </h5>
                 <p class="card-text">Arduino Programming</p>
                 <p class="card-text">AVR Microcontroller Programming</p>
                 <p class="card-text">IoT Device Design and Prototyping</p>
@@ -57,7 +61,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div class="card bg-dark text-warning">
+            <div class="card bg-transparent text-warning mb-5">
               <div class="card-header">
                 <i class="bi bi-code-slash"></i>
               </div>
@@ -71,7 +75,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div class="card bg-dark text-warning">
+            <div class="card bg-transparent text-warning mb-5">
               <div class="card-header">
                 <i class="bi bi-server"></i>
               </div>
@@ -85,7 +89,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div class="card bg-dark text-warning">
+            <div class="card bg-transparent text-warning mb-5">
               <div class="card-header">
                 <i class="bi bi-tools"></i>
               </div>
@@ -112,6 +116,14 @@ export default {
 </script>
 
 <style scoped>
+
+main{
+  background-image: url('../assets/background2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .greeting{
   display: flex;
   flex-direction: column;
@@ -120,9 +132,6 @@ export default {
   color: #fff;
   padding: 0px 8px;
   min-height: 100vh;
-  background-image: url('../assets/background2.jpg');
-  background-position: center;
-  background-size: cover;
 }
 
 section .main-greeting{
@@ -152,9 +161,6 @@ section .main-name{
   color: #ffc107;
   position: relative;
   padding: 16px 8px;
-  background: url('../assets/background1.jpg');
-  background-position: center;
-  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -185,23 +191,11 @@ section .main-name{
 }
 
 .description .intro-container .intro{
-  font-size: 7em;
+  font-size: 6em;
   text-transform: uppercase;
   letter-spacing: 6px;
-  color: #d5c2641a;
+  color: #d5c2643d;
   font-weight: bold;
-}
-
-.description .intro-container .intro::after{
-  content: "I'm Javier Bryan";
-  position: absolute;
-  font-size: 28px;
-  top: calc(50% - 0.8em);
-  left: calc(50% - 3em);
-  text-transform: capitalize;
-  letter-spacing:normal;
-  color: #ffc107;
-  font-weight: normal;
 }
 
 .description .social-icons{
@@ -213,21 +207,11 @@ section .main-name{
     font-size: 3.5em;
     letter-spacing: 4px;
   }
-
-  .description .intro-container .intro::after{
-    font-size: 16px;
-    top: calc(50% - 10px);
-    left: calc(50% - 16px * 4);
-  }
 }
 
 @media screen  and (min-width:1000px){
   .description-col{
     text-align: left;
-  }
-  .description .intro-container .intro::after{
-    top: calc(50% - 0.7em);
-    left: calc(50% - 5em);
   }
 }
 
@@ -239,7 +223,7 @@ section .main-name{
   min-height: 50vh;
 }
 
-.services h5{
+.services .what-i-do{
   color: #d5c2646b;
   font-size: 1em;
   text-transform: uppercase;
@@ -249,6 +233,14 @@ section .main-name{
   margin-bottom: 12px;
   font-weight: bold;
   font-size: 2em;
+}
+
+.services .card{
+  border: none;
+}
+
+.services .card .card-title{
+  font-weight: bold;
 }
 
 .services .card .bi{
