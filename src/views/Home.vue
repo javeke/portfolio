@@ -238,6 +238,15 @@ section .main-name{
   padding: 16px 0;
 }
 
+
+@media screen and (max-width: 600px) {
+  .services{
+    background-color: #212529;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 .services .service-row{
   min-height: 50vh;
 }

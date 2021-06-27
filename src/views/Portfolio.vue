@@ -123,6 +123,15 @@ section{
     padding: 16px 8px;
 }
 
+
+@media screen and (max-width: 600px) {
+  .works{
+    background-color: #212529;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 .works .img-col{
     padding: 16px auto;
 }
