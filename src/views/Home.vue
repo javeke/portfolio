@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="greeting">
-      <p class="main-greeting">Hi!<span class="emoji">🙂</span> I'm</p>
+      <p class="main-greeting">Hello!<span class="emoji">🙂</span> I'm</p>
       <p class="main-name"> Javier Bryan</p>
     </section>
     <section class="description">
@@ -116,13 +116,6 @@ export default {
 </script>
 
 <style scoped>
-
-main{
-  background-image: url('../assets/background2.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
 
 .greeting{
   display: flex;

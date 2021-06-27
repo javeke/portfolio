@@ -84,14 +84,6 @@
 </template>
 
 <style scoped>
-main{
-    background-image: url('../assets/background2.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 section{
     min-height: 100vh;
 }
