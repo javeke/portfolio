@@ -130,7 +130,7 @@ section{
   padding: 0px 8px;
 }
 
-section .main-greeting{
+.greeting .main-greeting{
   text-transform: uppercase;
   font-size: 24px;
   opacity: 0.5;
@@ -155,7 +155,7 @@ section .main-greeting{
   }
 }
 
-section .main-name{
+.greeting .main-name{
   text-transform: uppercase;
   font-size: 64px;
   font-weight: bold;
@@ -163,10 +163,10 @@ section .main-name{
 }
 
 @media screen and (max-width:600px) {
-  section .main-greeting{
+  .greeting .main-greeting{
     font-size: 1em;
   }
-  section .main-name{
+  .greeting .main-name{
     font-size: 2em;
   }
 }
@@ -215,7 +215,7 @@ section .main-name{
 }
 
 .description .intro-container .intro{
-  font-size: 6em;
+  font-size: 4em;
   text-transform: uppercase;
   letter-spacing: 6px;
   color: #d5c2643d;
@@ -228,7 +228,7 @@ section .main-name{
 
 @media screen and (max-width:600px) {
   .description .intro-container .intro{
-    font-size: 3.5em;
+    font-size: 2em;
     letter-spacing: 4px;
   }
 }
@@ -242,14 +242,24 @@ section .main-name{
 
 .services-heading .what-i-do{
   color: #d5c2646b;
-  font-size: 1em;
+  font-size: 1.5em;
   text-transform: uppercase;
 }
 
 .services-heading h3{
   margin-bottom: 12px;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 3em;
+}
+
+@media screen and (max-width: 600px) {
+  .services-heading .what-i-do{
+    font-size: 1em;
+  }
+
+  .services-heading h3{
+    font-size: 2em;
+  }
 }
 
 .services{
