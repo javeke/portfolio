@@ -33,6 +33,13 @@ export default {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 600px) {
+  #app{
+    background-attachment: local; 
+    /* testing this out */
+  }
+}
+
 #nav {
   padding: 30px;
 }
