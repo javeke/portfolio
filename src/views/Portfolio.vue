@@ -19,10 +19,10 @@
                                     I worked on an embedded systems project with the aim that the device should be able to monitor the heart rate, temperate and position of a critically ill patient.
                                 </p>
                                 <div class="card-btn-group">
-                                    <a href="https://raza-rpms.herokuapp.com/" class="btn btn-warning btn-sm">
+                                    <a href="https://raza-rpms.herokuapp.com/" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
                                         View project
                                     </a>
-                                    <a href="http://jamaica-star.com/article/news/20200429/uwi-student-develops-healthcare-gadget" class="btn btn-warning btn-sm">
+                                    <a href="http://jamaica-star.com/article/news/20200429/uwi-student-develops-healthcare-gadget" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
                                         Read news article
                                     </a>
                                 </div>
@@ -43,10 +43,10 @@
                                     I contributed to an open source project management and scheduling app for churches owned by the Palisadoes Foundation for their annual Calico Challenge. 
                                 </p>
                                 <div class="card-btn-group">
-                                    <a href="https://github.com/PalisadoesFoundation/talawa/tree/master" class="btn btn-warning btn-sm">
+                                    <a href="https://github.com/PalisadoesFoundation/talawa/tree/master" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
                                         View project
                                     </a>
-                                    <a href="https://www.youtube.com/watch?v=gi54H3sGYic&ab_channel=ThePalisadoesFoundation" class="btn btn-warning btn-sm">
+                                    <a href="https://www.youtube.com/watch?v=gi54H3sGYic&ab_channel=ThePalisadoesFoundation" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
                                         View Demo Video
                                     </a>
                                 </div>
@@ -67,10 +67,10 @@
                                     I collaborated with a few friends and worked on a mobile app that would be able to allow users to post, report and track criminal activies they encoutered.
                                 </p>
                                 <div class="card-btn-group">
-                                    <a href="https://github.com/javeke/jami" class="btn btn-warning btn-sm">
+                                    <a href="https://github.com/javeke/jami" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
                                         View project
                                     </a>
-                                    <a href="https://devpost.com/software/jami" class="btn btn-warning btn-sm">
+                                    <a href="https://devpost.com/software/jami" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
                                         Read more
                                     </a>
                                 </div>
@@ -138,6 +138,7 @@ section{
     border: none;
     width: 80%;
     background-color: #212529b6;
+    text-align: left;
 }
 
 .works .card .card-body{
@@ -166,7 +167,7 @@ section{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     margin: auto 0;
 }
 </style>

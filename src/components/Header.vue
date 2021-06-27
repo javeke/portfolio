@@ -12,7 +12,7 @@
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                 <a class="nav-link" href="/portfolio">Portfolio</a>
-                <a class="nav-link" href="/blog">Blog</a>
+                <!-- <a class="nav-link" href="/blog">Blog</a> -->
             </div>
             </div>
         </div>

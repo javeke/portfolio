@@ -8,7 +8,7 @@
       <div class="container description-container">
         <div class="row">
           <div class="col">
-            <div class="intro-container fade show"><h3 class="intro">About</h3></div>
+            <div class="intro-container"><h3 class="intro">About</h3></div>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -16,24 +16,26 @@
             <img src="../assets/profile.jpg" alt="body-picture" class="body-picture">
           </div>
           <div class="col-lg-6 col-sm-12 description-col">
-            <p>An aspiring robotics engineer and software developer.👨‍💻</p>
-            <p>I am a Chancellorite🦁 and Manchester United⚽ fan who has a passion for computer systems development. I believe in bringing our
-              most creative and imaginative thoughts into reality as I do believe knowledge is an omnipotent tool when placed in the right hands.
-              I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
-            </p>
-            <!-- <p><a class="resume-link" href="#">Check out my resume</a></p> -->
-            <p class="mt-5">Contact me here!</p>
-            <div class="contacts">
-              <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="link-warning" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
-              <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="link-warning" href="https://t.me/javiii_don"> @javiii_don</a></p>
+            <div class="description-col-container">
+              <p>An aspiring robotics engineer and software developer.👨‍💻</p>
+              <p>I am a Chancellorite🦁 and Manchester United⚽ fan who has a passion for computer systems development. I believe in bringing our
+                most creative and imaginative thoughts into reality as I do believe knowledge is an omnipotent tool when placed in the right hands.
+                I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
+              </p>
+              <!-- <p><a class="resume-link" href="#">Check out my resume</a></p> -->
+              <p class="mt-5">Contact me here!</p>
+              <div class="contacts">
+                <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="link-warning" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
+                <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="link-warning" href="https://t.me/javiii_don"> @javiii_don</a></p>
+              </div>
+              <div class="social-icons btn-group">
+                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.github.com/javeke"> <i class="bi-github"></i> </a></button>
+                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.instagram.com/javiertjbryan"> <i class="bi bi-instagram"> </i></a> </button>
+                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.twitter.com/javiii_don"> <i class="bi bi-twitter"> </i></a> </button>
+                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.linkedin.com/in/javier-bryan-b06510131"> <i class="bi bi-linkedin"> </i></a> </button>
+                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.facebook.com/javierbryan22"> <i class="bi bi-facebook"> </i></a> </button>
+              </div>
             </div>
-            <div class="social-icons btn-group">
-              <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.github.com/javeke"> <i class="bi-github"></i> </a></button>
-              <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.instagram.com/javiertjbryan"> <i class="bi bi-instagram"> </i></a> </button>
-              <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.twitter.com/javiii_don"> <i class="bi bi-twitter"> </i></a> </button>
-              <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.linkedin.com/in/javier-bryan-b06510131"> <i class="bi bi-linkedin"> </i></a> </button>
-              <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.facebook.com/javierbryan22"> <i class="bi bi-facebook"> </i></a> </button>
-            </div> 
           </div>
         </div>
       </div>
@@ -189,7 +191,7 @@ section .main-name{
 }
 
 .description .image-col{
-  padding: 16px 0px;
+  padding: 16px 12px;
 }
 
 .description .body-picture{
@@ -197,6 +199,16 @@ section .main-name{
   width: 80%;
   height: auto;
   border-radius: 6px;  
+}
+
+.description-col{
+  display: flex;
+}
+
+.description-col-container{
+  margin: 0 auto;
+  text-align: left;
+  width: 80%;
 }
 
 .description .intro-container{
@@ -219,12 +231,6 @@ section .main-name{
   .description .intro-container .intro{
     font-size: 3.5em;
     letter-spacing: 4px;
-  }
-}
-
-@media screen  and (min-width:1000px){
-  .description-col{
-    text-align: left;
   }
 }
 
