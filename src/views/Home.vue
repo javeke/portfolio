@@ -1,10 +1,10 @@
 <template>
   <main>
     <section class="greeting">
-      <p class="main-greeting">Hi!🙂 I'm</p>
+      <p class="main-greeting">Hi!<span class="emoji">🙂</span> I'm</p>
       <p class="main-name"> Javier Bryan</p>
     </section>
-    <section class="bg-dark description">
+    <section class="description">
       <div class="container description-container">
         <div class="row">
           <div class="col">
@@ -17,15 +17,15 @@
           </div>
           <div class="col-lg-6 col-sm-12 description-col">
             <p>An aspiring robotics engineer and software developer.👨‍💻</p>
-            <p>I am a Chancellorite🦁 and Manchester United⚽ fan who has a passion for computer systems development. I believe in bring our
+            <p>I am a Chancellorite🦁 and Manchester United⚽ fan who has a passion for computer systems development. I believe in bringing our
               most creative and imaginative thoughts into reality as I do believe knowledge is an omnipotent tool when placed in the right hands.
               I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
             </p>
             <!-- <p><a class="resume-link" href="#">Check out my resume</a></p> -->
             <p class="mt-5">Contact me here!</p>
             <div class="contacts">
-              <p><span>Email <i class="bi bi-mailbox"></i></span> : <a href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
-              <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a href="https://t.me/javiii_don"> @javiii_don</a></p>
+              <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="link-warning" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
+              <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="link-warning" href="https://t.me/javiii_don"> @javiii_don</a></p>
             </div>
             <div class="social-icons btn-group">
               <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.github.com/javeke"> <i class="bi-github"></i> </a></button>
@@ -141,6 +141,24 @@ section .main-greeting{
   letter-spacing: 4px;
 }
 
+.main-greeting span{
+  display: inline-block;
+  animation: gyro 2s infinite;
+}
+
+@keyframes gyro {
+  from{
+    transform: rotate3d(0,1,0, 0);
+    -ms-transform: rotate3d(0,1,0, 0);
+    -webkit-transform: rotate3d(0,1,0, 0);
+  }
+  to{
+    transform: rotate3d(0,1,0,360deg);
+    -ms-transform: rotate3d(0,1,0,360deg);
+    -webkit-transform: rotate3d(0,1,0,360deg);
+  }
+}
+
 section .main-name{
   text-transform: uppercase;
   font-size: 64px;
@@ -165,6 +183,8 @@ section .main-name{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #212529b6;
+  backdrop-filter: blur(4px);
 }
 
 .description .contacts p{
