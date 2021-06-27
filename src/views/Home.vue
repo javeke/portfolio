@@ -255,6 +255,7 @@ section .main-name{
 .services{
   padding: 16px 0;
   background-color: #212529;
+  min-height: fit-content
 }
 
 .services .card{
