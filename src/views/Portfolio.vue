@@ -88,12 +88,6 @@ section{
   min-height: 100vh;
 }
 
-@media screen and (max-width:600px) {
-  section{
-    min-height: 80vh;
-  }
-}
-
 .checkout{
     display: flex;
     flex-direction: column;
@@ -103,6 +97,14 @@ section{
     padding: 0px 8px;
 }
 
+@media screen and (max-width:600px) {
+  .checkout{
+    background-image: url('../assets/background2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
 .checkout h3{
     font-size: 64px;
     font-weight: bold;
@@ -184,14 +186,5 @@ section{
     flex-wrap: wrap;
     justify-content: flex-start;
     margin: auto 0;
-}
-@media screen and (max-width:600px) {
-  section {
-    background-image: url('../assets/background2.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-  }
 }
 </style>

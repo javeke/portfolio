@@ -40,14 +40,12 @@
         </div>
       </div>
     </section>
+    <section class="services-heading">
+     <h5 class="what-i-do">What I do</h5>
+      <h3 class="text-warning">My services</h3>
+    </section>
     <section class="services">
       <div class="container">
-        <div class="row service-row align-items-center">
-          <div class="col">
-            <h5 class="what-i-do">What I do</h5>
-            <h3 class="text-warning">My services</h3>
-          </div>
-        </div>
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
             <div class="card bg-transparent text-warning mb-5">
@@ -121,12 +119,6 @@ export default {
 
 section{
   min-height: 100vh;
-}
-
-@media screen and (max-width:600px) {
-  section{
-    min-height: 80vh;
-  }
 }
 
 .greeting{
@@ -241,24 +233,28 @@ section .main-name{
   }
 }
 
-.services{
-  padding: 16px 0;
+.services-heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.services .service-row{
-  min-height: 50vh;
-}
-
-.services .what-i-do{
+.services-heading .what-i-do{
   color: #d5c2646b;
   font-size: 1em;
   text-transform: uppercase;
 }
 
-.services h3{
+.services-heading h3{
   margin-bottom: 12px;
   font-weight: bold;
   font-size: 2em;
+}
+
+.services{
+  padding: 16px 0;
+  background-color: #212529;
 }
 
 .services .card{
@@ -274,11 +270,10 @@ section .main-name{
 }
 
 @media screen and (max-width:600px) {
-  .greeting, .services{
+  .greeting, .services-heading{
     background-image: url('../assets/background2.jpg');
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
   }
 }
