@@ -33,6 +33,12 @@ export default {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width:600px) {
+  #app{
+    background: none;
+  }
+}
+
 #nav {
   padding: 30px;
 }

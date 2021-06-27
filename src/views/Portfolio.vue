@@ -2,7 +2,7 @@
     <main>
         <section class="checkout">
             <h5>Portfolio</h5>
-            <h3>Checkout a few of my works</h3>
+            <h3>Checkout a few of my projects</h3>
         </section>
         <section class="works">
             <div class="container">
@@ -85,7 +85,13 @@
 
 <style scoped>
 section{
-    min-height: 100vh;
+  min-height: 100vh;
+}
+
+@media screen and (max-width:600px) {
+  section{
+    min-height: 80vh;
+  }
 }
 
 .checkout{
@@ -178,5 +184,14 @@ section{
     flex-wrap: wrap;
     justify-content: flex-start;
     margin: auto 0;
+}
+@media screen and (max-width:600px) {
+  section {
+    background-image: url('../assets/background2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
 }
 </style>

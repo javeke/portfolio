@@ -119,6 +119,16 @@ export default {
 
 <style scoped>
 
+section{
+  min-height: 100vh;
+}
+
+@media screen and (max-width:600px) {
+  section{
+    min-height: 80vh;
+  }
+}
+
 .greeting{
   display: flex;
   flex-direction: column;
@@ -126,7 +136,6 @@ export default {
   justify-content: center;
   color: #fff;
   padding: 0px 8px;
-  min-height: 100vh;
 }
 
 section .main-greeting{
@@ -174,12 +183,10 @@ section .main-name{
   color: #ffc107;
   position: relative;
   padding: 16px 8px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #212529b6;
-  backdrop-filter: blur(4px);
+  background-color: #212529;
 }
 
 .description .contacts p{
@@ -238,15 +245,6 @@ section .main-name{
   padding: 16px 0;
 }
 
-
-@media screen and (max-width: 600px) {
-  .services{
-    background-color: #212529;
-    background-position: center;
-    background-size: cover;
-  }
-}
-
 .services .service-row{
   min-height: 50vh;
 }
@@ -273,5 +271,15 @@ section .main-name{
 
 .services .card .bi{
   font-size: 3em;
+}
+
+@media screen and (max-width:600px) {
+  .greeting, .services{
+    background-image: url('../assets/background2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
 }
 </style>
