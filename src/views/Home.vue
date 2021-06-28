@@ -28,7 +28,7 @@
                 <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="link-warning" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
                 <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="link-warning" href="https://t.me/javiii_don"> @javiii_don</a></p>
               </div>
-              <div class="social-icons btn-group">
+              <div class="social-icons">
                 <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.github.com/javeke"> <i class="bi-github"></i> </a></button>
                 <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.instagram.com/javiertjbryan"> <i class="bi bi-instagram"> </i></a> </button>
                 <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.twitter.com/javiii_don"> <i class="bi bi-twitter"> </i></a> </button>
@@ -104,6 +104,9 @@
           </div>
         </div>
       </div>
+    </section>
+    <section class="contact">
+
     </section>
   </main>
 </template>
@@ -183,6 +186,7 @@ section{
 
 .description .contacts p{
   margin-bottom: 8px;
+  word-break: break-all;
 }
 
 .description .contacts span{
@@ -224,6 +228,13 @@ section{
 
 .description .social-icons{
   margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.description .social-icons .btn{
+  border-radius: 50%;
 }
 
 @media screen and (max-width:600px) {
@@ -281,7 +292,7 @@ section{
 }
 
 @media screen and (max-width:600px) {
-  .greeting, .services-heading{
+  .greeting, .services-heading, .contact{
     background-image: url('../assets/background2.jpg');
     background-position: center;
     background-size: cover;
