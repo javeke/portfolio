@@ -105,9 +105,9 @@
         </div>
       </div>
     </section>
-    <section class="contact">
+    <!-- <section class="contact">
 
-    </section>
+    </section> -->
   </main>
 </template>
 
