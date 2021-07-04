@@ -9,11 +9,10 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-                <a class="nav-link" href="/portfolio">Portfolio</a>
-                <!-- <a class="nav-link" href="/blog">Blog</a> -->
-            </div>
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/portfolio">Portfolio</a>
+                </div>
             </div>
         </div>
     </nav>

@@ -11,12 +11,12 @@
             <div class="intro-container"><h3 class="intro">About</h3></div>
           </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row description-row justify-content-center">
           <div class="col-lg-6 col-sm-12 image-col">
-            <img src="../assets/profile.jpg" alt="body-picture" class="body-picture">
+            <img data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="2500"  src="../assets/profile.jpg" alt="body-picture" class="body-picture">
           </div>
           <div class="col-lg-6 col-sm-12 description-col">
-            <div class="description-col-container">
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="2500" class="description-col-container">
               <p>An aspiring robotics engineer and software developer.👨‍💻</p>
               <p>I am a Chancellorite🦁 and Manchester United⚽ fan who has a passion for computer systems development. I believe in bringing our
                 most creative and imaginative thoughts into reality as I do believe knowledge is an omnipotent tool when placed in the right hands.
@@ -41,14 +41,14 @@
       </div>
     </section>
     <section class="services-heading">
-     <h5 class="what-i-do">What I do</h5>
-      <h3 class="text-warning">My services</h3>
+      <h5 data-aos="slide-left" data-aos-easing="ease-in-sine" class="what-i-do">What I do</h5>
+      <h3 data-aos="slide-right" data-aos-easing="ease-in-sine" class="text-warning">My services</h3>
     </section>
     <section class="services">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div class="card bg-transparent text-warning mb-5">
+            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-warning mb-5">
               <div class="card-header">
                 <i class="bi bi-cpu"></i>
               </div>
@@ -61,7 +61,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div class="card bg-transparent text-warning mb-5">
+            <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-warning mb-5">
               <div class="card-header">
                 <i class="bi bi-code-slash"></i>
               </div>
@@ -75,7 +75,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div class="card bg-transparent text-warning mb-5">
+            <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-warning mb-5">
               <div class="card-header">
                 <i class="bi bi-server"></i>
               </div>
@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div class="card bg-transparent text-warning mb-5">
+            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-warning mb-5">
               <div class="card-header">
                 <i class="bi bi-tools"></i>
               </div>
@@ -138,6 +138,7 @@ section{
   font-size: 24px;
   opacity: 0.5;
   letter-spacing: 4px;
+  
 }
 
 .main-greeting span{
@@ -162,7 +163,25 @@ section{
   text-transform: uppercase;
   font-size: 64px;
   font-weight: bold;
-  letter-spacing: 8px;
+  animation: stretch 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  background-color: #fbb034;
+  background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes stretch {
+  from{
+    letter-spacing: 4px;
+  }
+  to {
+    letter-spacing: 8px;
+  }
 }
 
 @media screen and (max-width:600px) {
@@ -171,6 +190,15 @@ section{
   }
   .greeting .main-name{
     font-size: 2em;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .greeting .main-greeting{
+    font-size: 0.8em;
+  }
+  .greeting .main-name{
+    font-size: 1.5em;
   }
 }
 
@@ -244,6 +272,13 @@ section{
   }
 }
 
+@media screen and (max-width:400px) {
+  .description .intro-container .intro{
+    font-size: 1.5em;
+    letter-spacing: 2px;
+  }
+}
+
 .services-heading{
   display: flex;
   flex-direction: column;
@@ -270,6 +305,16 @@ section{
 
   .services-heading h3{
     font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .services-heading .what-i-do{
+    font-size: 0.8em;
+  }
+
+  .services-heading h3{
+    font-size: 1.5em;
   }
 }
 

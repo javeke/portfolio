@@ -7,11 +7,11 @@
         <section class="works">
             <div class="container">
                 <div class="row mb-5">
-                    <div class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                    <div data-aos="fade-left" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                         <img src="../assets/rmps.png" alt="Placeholder for now">
                     </div>  
-                    <div class="col-md-6 col-sm-12 d-flex justify-content-center">
-                        <div class="card text-warning">
+                    <div data-aos="fade-right" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                        <div class="shake-card card text-warning">
                             <div class="card-header">Embedded Systems</div>
                             <div class="card-body">
                                 <h5 class="card-title">Remote Patient Monitoring System</h5>
@@ -19,6 +19,9 @@
                                     I worked on an embedded systems project with the aim that the device should be able to monitor the heart rate, temperate and position of a critically ill patient.
                                 </p>
                                 <div class="card-btn-group">
+                                    <a href="https://github.com/javeke/raza-rmps" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
+                                        View Source Code
+                                    </a>
                                     <a href="https://raza-rpms.herokuapp.com/" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
                                         View project
                                     </a>
@@ -31,11 +34,11 @@
                     </div>
                 </div>
                 <div class="row mb-5">
-                    <div class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                    <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                         <img src="../assets/quito-black.jpg" alt="Placeholder for now">
                     </div>  
-                    <div class="col-md-6 col-sm-12 d-flex justify-content-center">
-                        <div class="card text-warning">
+                    <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                        <div class="shake-card card text-warning">
                             <div class="card-header">Mobile App Development</div>
                             <div class="card-body">
                                 <h5 class="card-title">Quito Project (Talawa)</h5>
@@ -55,11 +58,11 @@
                     </div>
                 </div>
                 <div class="row mb-5">
-                    <div class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                    <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                         <img src="../assets/jami.jpg" alt="Placeholder for now">
                     </div>  
-                    <div class="col-md-6 col-sm-12 d-flex justify-content-center">
-                        <div class="card text-warning">
+                    <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                        <div class="shake-card card text-warning">
                             <div class="card-header">Mobile App Development</div>
                             <div class="card-body">
                                 <h5 class="card-title">JAMi Project</h5>
@@ -105,10 +108,18 @@ section{
     background-repeat: no-repeat;
   }
 }
+
 .checkout h3{
     font-size: 64px;
     font-weight: bold;
+
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 
 .checkout h5{
     text-transform: uppercase;
@@ -123,6 +134,17 @@ section{
   }
   .checkout h3{
     font-size: 2em;
+  }
+}
+
+
+
+@media screen and (max-width:400px) {
+  .checkout h5{
+    font-size: 0.8em;
+  }
+  .checkout h3{
+    font-size: 1.5em;
   }
 }
 
@@ -155,6 +177,8 @@ section{
     border: none;
     width: 80%;
     background-color: #212529b6;
+    background-image: linear-gradient(315deg, #17191ab6 0%, #212529b6 74%);
+    padding: 12px;
     text-align: left;
 }
 
@@ -187,4 +211,22 @@ section{
     justify-content: flex-start;
     margin: auto 0;
 }
+
+/* animations */
+
+.shake-card a:hover{
+    animation: shake 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  20% { transform: translate(-1px, -2px) rotate(-1deg); }
+  40% { transform: translate(2px, 1px) rotate(2deg);}
+  60% { transform: translate(-2px, -2px) rotate(-2deg);}
+  80% { transform: translate(1px, 2px) rotate(0deg);}
+  100% { transform: translate(2px, -1px) rotate(1deg);}
+}
+
 </style>
