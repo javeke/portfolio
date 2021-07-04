@@ -11,11 +11,6 @@ const routes = [
     component: Home
   },
   {
-    path: '/portfolio',
-    name: 'Portfolio',
-    component: () => import('../views/Portfolio.vue')
-  },
-  {
     path: '*',
     redirect: '/'
   }

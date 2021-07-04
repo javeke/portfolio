@@ -3,9 +3,9 @@
     <section class="greeting">
       <p class="main-greeting">Hi!<span class="emoji">🙂</span> I'm</p>
       <p class="main-name"> Javier Bryan</p>
-      <p><a class="link-warning" href="/portfolio">Check my portfolio<span class="animated-left text-warning"> <i class="bi bi-chevron-double-right animated-left-arrow"></i> <i class="bi bi-chevron-double-right animated-left-arrow delay1"></i></span></a> </p>
+      <p><a class="link-warning" href="#portfolio">Check my portfolio<span class="animated-left text-warning"> <i class="bi bi-chevron-double-right animated-left-arrow"></i> <i class="bi bi-chevron-double-right animated-left-arrow delay1"></i></span></a> </p>
     </section>
-    <section class="description">
+    <section id="about" class="description">
       <div class="container description-container">
         <div class="row">
           <div class="col">
@@ -24,7 +24,7 @@
                 I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
               </p>
               <!-- <p><a class="resume-link" href="#">Check out my resume</a></p> -->
-              <p class="mt-5">Contact me here!</p>
+              <p id="contact" class="mt-5">Contact me here!</p>
               <div class="contacts">
                 <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="link-warning" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
                 <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="link-warning" href="https://t.me/javiii_don"> @javiii_don</a></p>
@@ -106,6 +106,8 @@
         </div>
       </div>
     </section>
+    <PortfolioHeader/>
+    <Portfolio/>
     <!-- <section class="contact">
 
     </section> -->
@@ -113,9 +115,15 @@
 </template>
 
 <script>
+import Portfolio from '@/components/Portfolio.vue';
+import PortfolioHeader from '@/components/PortfolioHeader.vue';
 
 export default {
   name: 'Home',
+  components:{
+    Portfolio,
+    PortfolioHeader
+  }
 }
 </script>
 
