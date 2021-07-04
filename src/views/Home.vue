@@ -3,7 +3,7 @@
     <section class="greeting">
       <p class="main-greeting">Hi!<span class="emoji">🙂</span> I'm</p>
       <p class="main-name"> Javier Bryan</p>
-      <p><a class="link-warning" href="#portfolio">Check my portfolio<span class="animated-left text-warning"> <i class="bi bi-chevron-double-right animated-left-arrow"></i> <i class="bi bi-chevron-double-right animated-left-arrow delay1"></i></span></a> </p>
+      <p><a class="link-warning" href="#portfolio">Checkout my portfolio<span class="animated-left text-warning"> <i class="bi bi-chevron-double-right animated-left-arrow"></i> <i class="bi bi-chevron-double-right animated-left-arrow delay1"></i></span></a> </p>
     </section>
     <section id="about" class="description">
       <div class="container description-container">
