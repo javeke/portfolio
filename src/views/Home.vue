@@ -3,6 +3,7 @@
     <section class="greeting">
       <p class="main-greeting">Hi!<span class="emoji">🙂</span> I'm</p>
       <p class="main-name"> Javier Bryan</p>
+      <p><a class="link-warning" href="/portfolio">Check my portfolio<span class="animated-left text-warning"> <i class="bi bi-chevron-double-right animated-left-arrow"></i> <i class="bi bi-chevron-double-right animated-left-arrow delay1"></i></span></a> </p>
     </section>
     <section class="description">
       <div class="container description-container">
@@ -201,6 +202,26 @@ section{
     font-size: 1.5em;
   }
 }
+
+.animated-left{
+  display: inline-flex;
+}
+.animated-left-arrow{
+  animation: left 1s linear infinite;
+}
+
+.delay1{
+  animation-delay: 0.3s;
+}
+
+
+@keyframes left {
+  0% { opacity:0; transform: translateX(-6px); }  
+  25% { opacity:1; transform: translateX(-3px); } 
+  75% { opacity:1; transform: translateX(3px); }  
+  100% { opacity:0; transform: translateX(6px); }
+}
+
 
 .description{
   color: #ffc107;
