@@ -6,6 +6,11 @@
       <p><a class="link-warning" href="#portfolio">Checkout my portfolio<span class="animated-left text-warning"> <i class="bi bi-chevron-double-right animated-left-arrow"></i> <i class="bi bi-chevron-double-right animated-left-arrow delay1"></i></span></a> </p>
     </section>
     <section id="about" class="description">
+      <div class="wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
       <div class="container description-container">
         <div class="row">
           <div class="col">
@@ -212,24 +217,55 @@ section{
 }
 
 .animated-left{
-  display: inline-flex;
+  position: relative;
+  margin: 0 10px;
 }
 .animated-left-arrow{
-  animation: left 1s linear infinite;
+  position: absolute;
+  animation: left 1.4s linear infinite;
 }
 
 .delay1{
-  animation-delay: 0.3s;
+  animation-delay: 0.7s;
 }
 
 
 @keyframes left {
-  0% { opacity:0; transform: translateX(-6px); }  
-  25% { opacity:1; transform: translateX(-3px); } 
-  75% { opacity:1; transform: translateX(3px); }  
-  100% { opacity:0; transform: translateX(6px); }
+  0% { opacity:0; transform: translateX(-12px); }  
+  25% { opacity:1; transform: translateX(-8px); } 
+  75% { opacity:1; transform: translateX(8px); }  
+  100% { opacity:0; transform: translateX(12px); }
 }
 
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 101px;
+}
+
+.wave .shape-fill {
+    fill: #1B1A18;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .wave svg {
+        width: calc(100% + 1.3px);
+        height: 96px;
+    }
+}
 
 .description{
   color: #ffc107;
