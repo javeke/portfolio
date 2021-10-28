@@ -33,8 +33,8 @@
                 most creative and imaginative thoughts into reality as I do believe knowledge is an omnipotent tool when placed in the right hands.
                 I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
               </p>
-              <!-- <p><a class="resume-link" href="#">Check out my resume</a></p> -->
-              <p id="contact" class="mt-5">Contact me here!</p>
+              <a class="resume-link" href="./Javier Bryan- Resume 2021.pdf" target="_blank">Check out my resume</a>
+              <p id="contact" class="mt-3">Contact me here!</p>
               <div class="contacts">
                 <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="link-warning" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
                 <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="link-warning" href="https://t.me/javiii_don"> @javiii_don</a></p>
@@ -336,6 +336,10 @@ section{
 .description-col-container{
   margin: 0 auto;
   width: 80%;
+}
+
+.description-col-container .resume-link{
+  color: #ffc107;;
 }
 
 .description .intro-container{
