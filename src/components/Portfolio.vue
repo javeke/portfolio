@@ -148,7 +148,7 @@ section{
     margin: auto 0;
 }
 
-@media screen and (min-width:400px) {
+@media screen and (min-width:800px) {
     .works .card{
         text-align: left;
     }
