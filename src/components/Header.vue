@@ -10,15 +10,25 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link" href="#about">About me</a>
-                    <a class="nav-link" href="#contact">Contact</a>
-                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                    <a class="nav-link" :class="{'active':activeLink==''}" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" :class="{'active':activeLink=='#about'}" href="#about">About</a>
+                    <a class="nav-link" :class="{'active':activeLink=='#contact'}" href="#contact">Contact</a>
+                    <a class="nav-link" :class="{'active':activeLink=='#portfolio'}" href="#portfolio">Portfolio</a>
                 </div>
             </div>
         </div>
     </nav>
 </template>
+
+<script>
+export default {
+    computed:{
+        activeLink(){
+            return this.$route.hash;
+        }
+    }
+}
+</script>
 
 <style scoped>
 

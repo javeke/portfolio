@@ -4,13 +4,13 @@
       <p class="main-greeting">Hi!<span class="emoji">🙂</span> I'm</p>
       <p class="main-name"> Javier Bryan</p>
       <p><a class="link-warning" href="#portfolio">Checkout my portfolio<span class="animated-left text-warning"> <i class="bi bi-chevron-double-right animated-left-arrow"></i> <i class="bi bi-chevron-double-right animated-left-arrow delay1"></i></span></a> </p>
-    </section>
-    <section id="about" class="description">
       <div class="wave">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
         </svg>
     </div>
+    </section>
+    <section id="about" class="description">
       <div class="container description-container">
         <div class="row">
           <div class="col">
@@ -47,8 +47,18 @@
       </div>
     </section>
     <section class="services-heading">
+      <div class="wave-top">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+          </svg>
+      </div>
       <h5 data-aos="slide-left" data-aos-easing="ease-in-sine" class="what-i-do">What I do</h5>
       <h3 data-aos="slide-right" data-aos-easing="ease-in-sine" class="text-warning">My services</h3>
+      <div class="wave-2">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+      </div>
     </section>
     <section class="services">
       <div class="container">
@@ -113,9 +123,6 @@
     </section>
     <PortfolioHeader/>
     <Portfolio/>
-    <!-- <section class="contact">
-
-    </section> -->
   </main>
 </template>
 
@@ -143,6 +150,7 @@ section{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
   color: #fff;
   padding: 0px 8px;
 }
@@ -245,18 +253,17 @@ section{
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    transform: rotate(180deg);
 }
 
 .wave svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 101px;
+    height: 120px;
 }
 
 .wave .shape-fill {
-    fill: #1B1A18;
+    fill: #212529;
 }
 
 /** For mobile devices **/
@@ -303,7 +310,6 @@ section{
 
 .description-col-container{
   margin: 0 auto;
-  text-align: left;
   width: 80%;
 }
 
@@ -322,12 +328,22 @@ section{
 .description .social-icons{
   margin-top: 16px;
   display: flex;
+  justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
 }
 
 .description .social-icons .btn{
   border-radius: 50%;
+}
+
+@media screen and (min-width:400px) {
+  .description-col-container{  
+    text-align: left;
+  }
+  .description .social-icons{
+    justify-content: flex-start;
+  }
 }
 
 @media screen and (max-width:600px) {
@@ -344,11 +360,53 @@ section{
   }
 }
 
+.wave-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave-top svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 130px;
+}
+
+.wave-top .shape-fill {
+    fill: #212529;
+}
+
+.wave-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-2 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 130px;
+}
+
+.wave-2 .shape-fill {
+    fill: #212529;
+}
+
 .services-heading{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .services-heading .what-i-do{
@@ -386,7 +444,7 @@ section{
 .services{
   padding: 16px 0;
   background-color: #212529;
-  min-height: fit-content
+  min-height: fit-content;
 }
 
 .services .card{

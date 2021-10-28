@@ -116,7 +116,6 @@ section{
     background-color: #212529b6;
     background-image: linear-gradient(315deg, #17191ab6 0%, #212529b6 74%);
     padding: 12px;
-    text-align: left;
 }
 
 .works .card .card-body{
@@ -145,8 +144,18 @@ section{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     margin: auto 0;
+}
+
+@media screen and (min-width:400px) {
+    .works .card{
+        text-align: left;
+    }
+
+    .works .card-btn-group{
+        justify-content: flex-start;
+    }
 }
 
 /* animations */
