@@ -28,9 +28,9 @@
           </div>
           <div class="col-lg-6 col-sm-12 description-col">
             <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="2500" class="description-col-container">
-              <p>An aspiring robotics engineer and software developer.👨‍💻</p>
-              <p>I am a Chancellorite🦁 and Manchester United⚽ fan who has a passion for computer systems development. I believe in bringing our
-                most creative and imaginative thoughts into reality as I do believe knowledge is an omnipotent tool when placed in the right hands.
+              <p>A software developer👨‍💻 and electronics hobbyist.</p>
+              <p>I have a passion for computer systems development and mechanical engineering. I believe in bringing our
+                most creative and imaginative thoughts into reality as I view knowledge as an omnipotent tool when placed in the right hands.
                 I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
               </p>
               <a class="resume-link" href="./Javier Bryan- Resume 2021.pdf" target="_blank">Check out my resume</a>
