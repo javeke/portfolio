@@ -14,4 +14,10 @@
 .footer p{
  margin: 0;
 }
+
+@media screen and (max-width:600px) {
+  .footer{
+    background: #212529;
+  }
+}
 </style>
