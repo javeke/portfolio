@@ -7,11 +7,15 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import VueTypedJs from 'vue-typed-js';
+
+Vue.use(VueTypedJs);
+
 Vue.config.productionTip = false;
 
 new Vue({
   created(){
-    AOS.init({duration:'1500', disable: function() {
+    AOS.init({duration:'1500', once:true, disable: function() {
       var maxWidth = 600;
       return window.innerWidth < maxWidth;
     }});

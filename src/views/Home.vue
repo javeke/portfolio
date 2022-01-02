@@ -7,8 +7,13 @@
         </svg>
       </div> -->
       <p class="main-greeting">Hi!<span class="emoji">🙂</span> I'm</p>
-      <p class="main-name"> Javier Bryan</p>
-      <p><a class="link-warning" href="#portfolio">Checkout my portfolio<span class="animated-left text-warning"> <i class="bi bi-chevron-double-right animated-left-arrow"></i> <i class="bi bi-chevron-double-right animated-left-arrow delay1"></i></span></a> </p>
+      <vue-typed-js 
+        :backSpeed="50" :showCursor="false"
+        :loop="true" :typeSpeed="50" :backDelay="3000"
+        :strings="['Javier Bryan','A Software Engineer', 'A Fullstack Developer']">
+        <p class="typing main-name"></p>
+      </vue-typed-js>
+      <p><a style="color: white;" class="checkout-link" href="#portfolio"><span class="animated-down"> <i class="bi bi-chevron-double-down animated-down-arrow"></i> <i class="bi bi-chevron-double-down animated-down-arrow delay1"></i></span></a> </p>
       <!-- <div class="wave">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
@@ -26,27 +31,27 @@
         </div>
         <div class="row description-row justify-content-center">
           <div class="col-lg-6 col-sm-12 image-col">
-            <img data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="2500"  src="../assets/profile.jpg" alt="body-picture" class="body-picture">
+            <img data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="1500"  src="../assets/profile.jpg" alt="body-picture" class="body-picture">
           </div>
           <div class="col-lg-6 col-sm-12 description-col">
-            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="2500" class="description-col-container">
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="1500" class="description-col-container">
               <p>A software developer👨‍💻 and electronics hobbyist.</p>
               <p>I have a passion for computer systems development and mechanical engineering. I believe in bringing our
                 most creative and imaginative thoughts into reality as I view knowledge as an omnipotent tool when placed in the right hands.
                 I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
               </p>
-              <a class="resume-link" href="./Javier Bryan- Resume 2021.pdf" target="_blank">Check out my resume</a>
+              <a class="text-white" href="./Javier Bryan- Resume 2021.pdf" target="_blank">Check out my resume</a>
               <p id="contact" class="mt-3">Contact me here!</p>
               <div class="contacts">
-                <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="link-warning" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
-                <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="link-warning" href="https://t.me/javiii_don"> @javiii_don</a></p>
+                <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="text-white" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
+                <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="text-white" href="https://t.me/javiii_don"> @javiii_don</a></p>
               </div>
               <div class="social-icons">
-                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.github.com/javeke"> <i class="bi-github"></i> </a></button>
-                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.instagram.com/javiertjbryan"> <i class="bi bi-instagram"> </i></a> </button>
-                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.twitter.com/javiii_don"> <i class="bi bi-twitter"> </i></a> </button>
-                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.linkedin.com/in/javier-bryan-b06510131"> <i class="bi bi-linkedin"> </i></a> </button>
-                <button type="button" class="btn btn-warning btn-sm"> <a class="text-dark" href="https://www.facebook.com/javierbryan22"> <i class="bi bi-facebook"> </i></a> </button>
+                <button type="button" class="btn text-white btn-sm"> <a class="text-dark" href="https://www.github.com/javeke"> <i class="bi-github"></i> </a></button>
+                <button type="button" class="btn text-white btn-sm"> <a class="text-dark" href="https://www.instagram.com/javiertjbryan"> <i class="bi bi-instagram"> </i></a> </button>
+                <button type="button" class="btn text-white btn-sm"> <a class="text-dark" href="https://www.twitter.com/javiii_don"> <i class="bi bi-twitter"> </i></a> </button>
+                <button type="button" class="btn text-white btn-sm"> <a class="text-dark" href="https://www.linkedin.com/in/javier-bryan-b06510131"> <i class="bi bi-linkedin"> </i></a> </button>
+                <button type="button" class="btn text-white btn-sm"> <a class="text-dark" href="https://www.facebook.com/javierbryan22"> <i class="bi bi-facebook"> </i></a> </button>
               </div>
             </div>
           </div>
@@ -62,7 +67,7 @@
         </svg>
       </div> -->
       <h5 data-aos="slide-left" data-aos-easing="ease-in-sine" class="what-i-do">What I do</h5>
-      <h3 data-aos="slide-right" data-aos-easing="ease-in-sine" class="text-warning">My services</h3>
+      <h3 data-aos="slide-right" data-aos-easing="ease-in-sine" class="text-white">My services</h3>
       <!-- <div class="wave-2">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
@@ -73,7 +78,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-warning mb-5">
+            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
                 <i class="bi bi-cpu"></i>
               </div>
@@ -86,7 +91,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-warning mb-5">
+            <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
                 <i class="bi bi-code-slash"></i>
               </div>
@@ -100,7 +105,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-warning mb-5">
+            <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
                 <i class="bi bi-server"></i>
               </div>
@@ -114,7 +119,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-warning mb-5">
+            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
                 <i class="bi bi-tools"></i>
               </div>
@@ -198,12 +203,6 @@ section{
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-
-  background-color: #fbb034;
-  background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 @keyframes stretch {
@@ -233,13 +232,20 @@ section{
   }
 }
 
-.animated-left{
-  position: relative;
-  margin: 0 10px;
+.checkout-link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
-.animated-left-arrow{
+
+.animated-down{
+  position: relative;
+  margin: 10 0px;
+}
+.animated-down-arrow{
   position: absolute;
-  animation: left 1.4s linear infinite;
+  animation: down 1.4s linear infinite;
 }
 
 .delay1{
@@ -247,11 +253,11 @@ section{
 }
 
 
-@keyframes left {
-  0% { opacity:0; transform: translateX(-12px); }  
-  25% { opacity:1; transform: translateX(-8px); } 
-  75% { opacity:1; transform: translateX(8px); }  
-  100% { opacity:0; transform: translateX(12px); }
+@keyframes down {
+  0% { opacity:0; transform: translateY(-12px); }  
+  25% { opacity:1; transform: translateY(-8px); } 
+  75% { opacity:1; transform: translateY(8px); }  
+  100% { opacity:0; transform: translateY(12px); }
 }
 
 
@@ -305,7 +311,7 @@ section{
 }
 
 .description{
-  color: #ffc107;
+  color: white;
   position: relative;
   padding: 16px 8px;
   display: flex;
@@ -343,10 +349,6 @@ section{
   width: 80%;
 }
 
-.description-col-container .resume-link{
-  color: #ffc107;
-}
-
 .description .intro-container{
   position: relative;
 }
@@ -356,7 +358,7 @@ section{
   text-transform: uppercase;
   letter-spacing: 6px;
   /* color: #d5c2643d; */
-  color: #ffc1077d;
+  color: white;
   font-weight: bold;
 }
 

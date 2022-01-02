@@ -6,7 +6,7 @@
                     <img src="../assets/rmps.png" alt="Placeholder for now">
                 </div>  
                 <div data-aos="fade-right" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
-                    <div class="shake-card card text-warning">
+                    <div class="shake-card card">
                         <div class="card-header">Embedded Systems</div>
                         <div class="card-body">
                             <h5 class="card-title">Remote Patient Monitoring System</h5>
@@ -14,13 +14,13 @@
                                 I worked on an embedded systems project with the aim that the device should be able to monitor the heart rate, temperate and position of a critically ill patient.
                             </p>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/raza-rmps" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/raza-rmps" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     View Source Code
                                 </a>
-                                <a href="https://raza-rpms.herokuapp.com/" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://raza-rpms.herokuapp.com/" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="http://jamaica-star.com/article/news/20200429/uwi-student-develops-healthcare-gadget" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="http://jamaica-star.com/article/news/20200429/uwi-student-develops-healthcare-gadget" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     Read news article
                                 </a>
                             </div>
@@ -33,7 +33,7 @@
                     <img src="../assets/quito-black.jpg" alt="Placeholder for now">
                 </div>  
                 <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
-                    <div class="shake-card card text-warning">
+                    <div class="shake-card card">
                         <div class="card-header">Mobile App Development</div>
                         <div class="card-body">
                             <h5 class="card-title">Quito Project (Talawa)</h5>
@@ -41,10 +41,10 @@
                                 I contributed to an open source project management and scheduling app for churches owned by the Palisadoes Foundation for their annual Calico Challenge. 
                             </p>
                             <div class="card-btn-group">
-                                <a href="https://github.com/PalisadoesFoundation/talawa/tree/master" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/PalisadoesFoundation/talawa/tree/master" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://www.youtube.com/watch?v=gi54H3sGYic&ab_channel=ThePalisadoesFoundation" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://www.youtube.com/watch?v=gi54H3sGYic&ab_channel=ThePalisadoesFoundation" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     View Demo Video
                                 </a>
                             </div>
@@ -57,7 +57,7 @@
                     <img src="../assets/jami.jpg" alt="Placeholder for now">
                 </div>  
                 <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
-                    <div class="shake-card card text-warning">
+                    <div class="shake-card card">
                         <div class="card-header">Mobile App Development</div>
                         <div class="card-body">
                             <h5 class="card-title">JAMi Project</h5>
@@ -65,10 +65,10 @@
                                 I collaborated with a few friends and worked on a mobile app that would be able to allow users to post, report and track criminal activies they encoutered.
                             </p>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/jami" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/jami" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://devpost.com/software/jami" class="link-warning"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://devpost.com/software/jami" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     Read more
                                 </a>
                             </div>
@@ -86,7 +86,7 @@ section{
 }
 
 .works{
-    color: #ffc107;
+    color: #fff;
     padding: 16px 8px;
 }
 
@@ -113,7 +113,7 @@ section{
 .works .card{
     border: none;
     width: 80%;
-    background-color: #212529b6;
+    background-color: #21252906;
     background-image: linear-gradient(315deg, #17191ab6 0%, #212529b6 74%);
     padding: 12px;
 }

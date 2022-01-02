@@ -37,12 +37,6 @@ section{
 .checkout h3{
     font-size: 56px;
     font-weight: bold;
-
-    background-color: #fbb034;
-    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 
