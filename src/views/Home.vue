@@ -446,7 +446,7 @@ section{
 }
 
 .services-heading .what-i-do{
-  color: #d5c2646b;
+  color: #ffffff7f;
   font-size: 1.5em;
   text-transform: uppercase;
 }
