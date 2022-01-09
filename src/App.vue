@@ -31,6 +31,23 @@ export default {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+  width: 14px;
+}
+
+::-webkit-scrollbar-track{
+  background: rgb(33, 37, 41);
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgba(83, 87, 91);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: gray;
 }
 
 @media screen and (max-width:600px) {
@@ -39,16 +56,4 @@ export default {
   }
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
