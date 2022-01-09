@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <nav class="navbar-dark bg-dark">
+        <nav class="navbar-dark bg-dark header__nav">
             <div class="navbar-container">
                 <button @click="showSidebar" class="menu-btn bg-dark" type="button" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="text-white bi bi-list"></i>
@@ -76,7 +76,10 @@ export default {
 }
 
 .header{
-    position: relative;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100vw;
 }
 
 .navbar-container{
@@ -109,8 +112,28 @@ export default {
     display: none;
 }
 
+.sidebar-backdrop{
+    height: 100vh;
+    width: 100vw;
+    background: #0000007f;
+}
+
+.sidebar {
+    display: flex;
+    width: 230px;
+    height: 80%;
+    -webkit-animation: slide-in 0.4s ease-out;
+    -moz-animation: slide-in 0.4s ease-out;
+    animation: slide-in 0.4s ease-out;
+    border-bottom-right-radius: 16px;
+}
+
 @media screen and (min-width:600px) {
     .menu-btn {
+        display: none;
+    }
+
+    .sidebar-backdrop {
         display: none;
     }
 
@@ -134,24 +157,6 @@ export default {
     }
 }
 
-.sidebar-backdrop{
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    z-index: 1;
-    top: 0;
-    background: #0000007f;
-}
-
-.sidebar {
-    display: flex;
-    width: 230px;
-    height: 90%;
-    -webkit-animation: slide-in 0.4s ease-out;
-    -moz-animation: slide-in 0.4s ease-out;
-    animation: slide-in 0.4s ease-out;
-    border-bottom-right-radius: 16px;
-}
 
 @keyframes slide-in {
     0% {
