@@ -19,16 +19,16 @@
                 </div>
             </div>
         </nav>
-        <div @click="closeSidebar" v-if="isSidebarShowing" class="sidebar-backdrop">
+        <div @click.stop="closeSidebar" v-if="isSidebarShowing" class="sidebar-backdrop">
             <div @click.stop class="navbar-nav sidebar bg-dark">
                 <div class="sidebar__logo">
                     <img src="../assets/logo.png" alt="personal-logo" class="d-inline-block align-text-top">
                 </div>
-                <a class="nav-link" :class="{'active':activeLink==''}" aria-current="page" href="/"><i class="bi bi-house"></i>Home</a>
-                <a class="nav-link" :class="{'active':activeLink=='#about'}" href="#about"><i class="bi bi-file-earmark-person"></i>About</a>
-                <a class="nav-link" :class="{'active':activeLink=='#contact'}" href="#contact"><i class="bi bi-phone"></i>Contact</a>
-                <a class="nav-link" :class="{'active':activeLink=='#portfolio'}" href="#portfolio"><i class="bi bi-collection"></i>Portfolio</a>
-                <a class="nav-link" href="./Javier Bryan- Resume 2021.pdf" target="_blank"><i class="bi bi-terminal"></i>Resume</a>
+                <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink==''}" aria-current="page" href="/"><i class="bi bi-house"></i>Home</a>
+                <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink=='#about'}" href="#about"><i class="bi bi-file-earmark-person"></i>About</a>
+                <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink=='#contact'}" href="#contact"><i class="bi bi-phone"></i>Contact</a>
+                <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink=='#portfolio'}" href="#portfolio"><i class="bi bi-collection"></i>Portfolio</a>
+                <a class="nav-link" @click.stop="closeSidebar" href="./Javier Bryan- Resume 2021.pdf" target="_blank"><i class="bi bi-terminal"></i>Resume</a>
                 <p class="sidebar__footer">Javier Bryan | 2021</p>
             </div>
         </div>
@@ -146,8 +146,11 @@ export default {
 .sidebar {
     display: flex;
     width: 230px;
-    height: 100vh;
+    height: 90%;
+    -webkit-animation: slide-in 0.4s ease-out;
+    -moz-animation: slide-in 0.4s ease-out;
     animation: slide-in 0.4s ease-out;
+    border-bottom-right-radius: 16px;
 }
 
 @keyframes slide-in {
@@ -160,7 +163,13 @@ export default {
 }
 
 .sidebar a {
+    color: #aaa;
+    transition: all 0.3s ease-in-out;
+}
+
+a.active {
     color: white;
+    font-weight: bold;
 }
 
 .sidebar__logo > img{

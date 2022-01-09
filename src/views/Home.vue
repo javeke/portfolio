@@ -107,7 +107,7 @@
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
             <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
-                <i class="bi bi-server"></i>
+                <i class="bi bi-hdd-stack"></i>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Backend Development </h5>
@@ -121,7 +121,7 @@
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
             <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
-                <i class="bi bi-tools"></i>
+                <i class="bi bi-gear"></i>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Tools & Technologies </h5>
