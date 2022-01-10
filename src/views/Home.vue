@@ -36,12 +36,12 @@
           <div class="col-lg-6 col-sm-12 description-col">
             <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="1500" class="description-col-container">
               <p>A software developer👨‍💻 and electronics hobbyist.</p>
-              <p>I have a passion for computer systems development and mechanical engineering. I believe in bringing our
+              <p id="contact" >I have a passion for computer systems development and mechanical engineering. I believe in bringing our
                 most creative and imaginative thoughts into reality as I view knowledge as an omnipotent tool when placed in the right hands.
                 I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
               </p>
               <a class="text-white" href="./Javier Bryan- Resume 2021.pdf" target="_blank">Check out my resume</a>
-              <p id="contact" class="mt-3">Contact me here!</p>
+              <p class="mt-3">Contact me here!</p>
               <div class="contacts">
                 <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="text-white" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>
                 <p><span>Telegram <i class="bi bi-telegram"></i></span> : <a class="text-white" href="https://t.me/javiii_don"> @javiii_don</a></p>
