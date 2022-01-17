@@ -98,8 +98,9 @@
               <div class="card-body">
                 <h5 class="card-title">Frontend Development </h5>
                 <p class="card-text">Flutter Apps Development </p>
-                <p class="card-text">VueJs Development</p>
+                <p class="card-text">VueJS Development</p>
                 <p class="card-text">ReactJS Development</p>
+                <p class="card-text">Angular Development</p>
                 <p class="card-text">Swing and AWT Development</p>
               </div>
             </div>
@@ -114,6 +115,7 @@
                 <p class="card-text">Node + ExpressJs Development</p>
                 <p class="card-text">Flask Development</p>
                 <p class="card-text">MySQL Database</p>
+                <p class="card-text">PostgreSQL Database</p>
                 <p class="card-text">MongoDB</p>
               </div>
             </div>
