@@ -50,10 +50,10 @@
                                 <small class="postgres">PostgreSQL</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/gpt-3-landing" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/groceryscape" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://javeke.github.io/gpt-3-landing" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://groceryscape.firebaseapp.com" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
                                     View page
                                 </a>
                             </div>
