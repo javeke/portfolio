@@ -15,7 +15,7 @@
                     <a class="nav-link" :class="{'active':activeLink=='#about'}" href="#about">About</a>
                     <a class="nav-link" :class="{'active':activeLink=='#contact'}" href="#contact">Contact</a>
                     <a class="nav-link" :class="{'active':activeLink=='#portfolio'}" href="#portfolio">Portfolio</a>
-                    <a class="nav-link" href="./Javier Bryan- Resume 2021.pdf" target="_blank">Resume</a>
+                    <a class="nav-link" href="./Javier Bryan- Resume 2022.pdf" target="_blank">Resume</a>
                 </div>
             </div>
         </nav>
@@ -28,7 +28,7 @@
                 <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink=='#about'}" href="#about"><i class="bi bi-file-earmark-person"></i>About</a>
                 <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink=='#contact'}" href="#contact"><i class="bi bi-phone"></i>Contact</a>
                 <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink=='#portfolio'}" href="#portfolio"><i class="bi bi-collection"></i>Portfolio</a>
-                <a class="nav-link" @click.stop="closeSidebar" href="./Javier Bryan- Resume 2021.pdf" target="_blank"><i class="bi bi-terminal"></i>Resume</a>
+                <a class="nav-link" @click.stop="closeSidebar" href="./Javier Bryan- Resume 2022.pdf" target="_blank"><i class="bi bi-terminal"></i>Resume</a>
                 <p class="sidebar__footer">Javier Bryan | 2021</p>
             </div>
         </div>
