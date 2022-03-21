@@ -2,10 +2,10 @@
     <section id="portfolio" class="works">
         <div class="container">
             <div class="row mb-5">
-                <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                     <img src="../assets/gpt3.png" alt="Placeholder for now">
                 </div>  
-                <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
                     <div class="shake-card card">
                         <div class="card-header">Frontend Development</div>
                         <div class="card-body">
@@ -31,10 +31,10 @@
                 </div>
             </div>
             <div class="row mb-5">
-                <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                     <img src="../assets/groceryscape.png" alt="Placeholder for now">
                 </div>  
-                <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
                     <div class="shake-card card">
                         <div class="card-header">Fullstack Development</div>
                         <div class="card-body">
@@ -62,10 +62,10 @@
                 </div>
             </div>
             <div class="row mb-5">
-                <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                     <img src="../assets/pix.png" alt="Placeholder for now">
                 </div>  
-                <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
                     <div class="shake-card card">
                         <div class="card-header">Fullstack Development</div>
                         <div class="card-body">
@@ -92,10 +92,10 @@
                 </div>
             </div>
             <div class="row mb-5">
-                <div data-aos="fade-left" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="fade-left" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                     <img src="../assets/rmps.png" alt="Placeholder for now">
                 </div>  
-                <div data-aos="fade-right" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="fade-right" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
                     <div class="shake-card card">
                         <div class="card-header">Embedded Systems</div>
                         <div class="card-body">
@@ -126,10 +126,10 @@
                 </div>
             </div>
             <div class="row mb-5">
-                <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                     <img src="../assets/quito-black.jpg" alt="Placeholder for now">
                 </div>  
-                <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
                     <div class="shake-card card">
                         <div class="card-header">Mobile App Development</div>
                         <div class="card-body">
@@ -153,10 +153,10 @@
                 </div>
             </div>
             <div class="row mb-5">
-                <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                     <img src="../assets/jami.jpg" alt="Placeholder for now">
                 </div>  
-                <div data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
                     <div class="shake-card card">
                         <div class="card-header">Mobile App Development</div>
                         <div class="card-body">

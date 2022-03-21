@@ -31,10 +31,10 @@
         </div>
         <div class="row description-row justify-content-center">
           <div class="col-lg-6 col-sm-12 image-col">
-            <img data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="1500"  src="../assets/profile.jpg" alt="body-picture" class="body-picture">
+            <img data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="500"  src="../assets/profile.jpg" alt="body-picture" class="body-picture">
           </div>
           <div class="col-lg-6 col-sm-12 description-col">
-            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="1500" class="description-col-container">
+            <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="500" class="description-col-container">
               <p>A software developer👨‍💻 and electronics hobbyist.</p>
               <p id="contact" >I have a passion for computer systems development and mechanical engineering. I believe in bringing our
                 most creative and imaginative thoughts into reality as I view knowledge as an omnipotent tool when placed in the right hands.
@@ -78,7 +78,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
+            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
                 <i class="bi bi-cpu"></i>
               </div>
@@ -91,7 +91,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
+            <div data-aos="zoom-out" data-aos-duration="500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
                 <i class="bi bi-code-slash"></i>
               </div>
@@ -106,7 +106,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
+            <div data-aos="zoom-out" data-aos-duration="500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
                 <i class="bi bi-hdd-stack"></i>
               </div>
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center align-self-start">
-            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="1500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
+            <div data-aos="zoom-out" data-aos-delay="500" data-aos-duration="500" data-aos-easing="ease-out-back" class="card bg-transparent text-white mb-5">
               <div class="card-header">
                 <i class="bi bi-gear"></i>
               </div>
