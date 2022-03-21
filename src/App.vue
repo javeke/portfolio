@@ -10,11 +10,20 @@
 
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import { getIpAddress, userVisits } from '@/services/visitor.service';
 
 export default {
   components:{
     Header,
     Footer
+  },
+  async created(){
+    try{
+      const { IPv4: ipAddress, country_name: country, state, city  } = await getIpAddress();
+      let visitor = { city, state, country, ipAddress };
+      await userVisits(visitor);
+    }
+    catch(err){}
   }
 }
 </script>
