@@ -19,10 +19,10 @@
                                 <small class="vue">VueJS</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/gpt-3-landing" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/gpt-3-landing" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://javeke.github.io/gpt-3-landing" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://javeke.github.io/gpt-3-landing" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View page
                                 </a>
                             </div>
@@ -50,10 +50,10 @@
                                 <small class="postgres">PostgreSQL</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/groceryscape" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/groceryscape" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://groceryscape.firebaseapp.com" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://groceryscape.firebaseapp.com" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View page
                                 </a>
                             </div>
@@ -80,10 +80,10 @@
                                 <small class="sanity">Sanity</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/gpt-3-landing" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/gpt-3-landing" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://javeke.github.io/gpt-3-landing" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://javeke.github.io/gpt-3-landing" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View page
                                 </a>
                             </div>
@@ -92,10 +92,10 @@
                 </div>
             </div>
             <div class="row mb-5">
-                <div data-aos-duration="500" data-aos="fade-left" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
                     <img src="../assets/rmps.png" alt="Placeholder for now">
                 </div>  
-                <div data-aos-duration="500" data-aos="fade-right" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
+                <div data-aos-duration="500" data-aos="zoom-in" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 d-flex justify-content-center">
                     <div class="shake-card card">
                         <div class="card-header">Embedded Systems</div>
                         <div class="card-body">
@@ -111,13 +111,13 @@
                                 <small class="express">ExpressJS</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/raza-rmps" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/raza-rmps" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View Source Code
                                 </a>
-                                <a href="https://raza-rpms.herokuapp.com/" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://raza-rpms.herokuapp.com/" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="http://jamaica-star.com/article/news/20200429/uwi-student-develops-healthcare-gadget" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="http://jamaica-star.com/article/news/20200429/uwi-student-develops-healthcare-gadget" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     Read news article
                                 </a>
                             </div>
@@ -141,10 +141,10 @@
                                 <small class="flutter">Flutter</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/PalisadoesFoundation/talawa/tree/master" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/PalisadoesFoundation/talawa/tree/master" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://www.youtube.com/watch?v=gi54H3sGYic&ab_channel=ThePalisadoesFoundation" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://www.youtube.com/watch?v=gi54H3sGYic&ab_channel=ThePalisadoesFoundation" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View Demo Video
                                 </a>
                             </div>
@@ -168,10 +168,10 @@
                                 <small class="flutter">Flutter</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/jami" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/jami" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://devpost.com/software/jami" class="text-white"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://devpost.com/software/jami" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
                                     Read more
                                 </a>
                             </div>
@@ -189,14 +189,14 @@ section{
 }
 
 .works{
-    color: #fff;
+    color: var(--primary-color);
     padding: 16px 8px;
 }
 
 
 @media screen and (max-width: 600px) {
   .works{
-    background-color: #212529;
+    background-color: var(--primary-bg-color);
     background-position: center;
     background-size: cover;
   }
@@ -216,8 +216,8 @@ section{
 .works .card{
     border: none;
     width: 80%;
-    background-color: #21252906;
-    background-image: linear-gradient(315deg, #17191ab6 0%, #212529b6 74%);
+    background-color: var(--primary-bg-color-100);
+    background-image: linear-gradient(315deg, var(--secondary-bg-color-700) 0%, var(--primary-bg-color-700) 74%);
     padding: 12px;
 }
 

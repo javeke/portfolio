@@ -8,7 +8,7 @@
 .footer{
     padding: 16px 0px ;
     font-size: 0.8em;
-    color: white;
+    color: var(--primary-color);
 }
 
 .footer p{
@@ -17,7 +17,7 @@
 
 @media screen and (max-width:600px) {
   .footer{
-    background: #212529;
+    background: var(--primary-bg-color);
   }
 }
 </style>
