@@ -54,6 +54,10 @@ export default {
   --secondary-bg-color: #eeeeee;
   --secondary-bg-color-700: #eeeeeed6;
   --primary-bg-image: url('./assets/light-background1.jpg');
+
+  --scrollbar-track-color:rgb(33, 37, 41);
+  --scrollbar-thumb-color:rgba(83, 87, 91);
+  --scrollbar-thumb-hover-color:gray;
 }
 
 .dark-theme {
@@ -84,6 +88,17 @@ export default {
   border: none;
 }
 
+@media (prefers-color-scheme: light) {
+
+  :root {
+
+    --scrollbar-track-color:#fff;
+    --scrollbar-thumb-color:rgb(219, 218, 218);
+    --scrollbar-thumb-hover-color:rgb(171, 171, 171);
+  }
+  
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root { 
     --primary-color: #fff;
@@ -98,6 +113,10 @@ export default {
     --secondary-bg-color: #17191a;
     --secondary-bg-color-700: #17191ab6;
     --primary-bg-image: url('./assets/background2.jpg');
+
+    --scrollbar-track-color:rgb(33, 37, 41);
+    --scrollbar-thumb-color:rgba(83, 87, 91);
+    --scrollbar-thumb-hover-color:gray;
   }
 } */
 
@@ -120,15 +139,15 @@ export default {
 }
 
 ::-webkit-scrollbar-track{
-  background: rgb(33, 37, 41);
+  background-color: var(--scrollbar-track-color);
 }
 
 ::-webkit-scrollbar-thumb{
-  background: rgba(83, 87, 91);
+  background-color: var(--scrollbar-thumb-color);
 }
 
 ::-webkit-scrollbar-thumb:hover{
-  background: gray;
+  background-color: var(--scrollbar-thumb-hover-color);
 }
 
 @media screen and (max-width:600px) {

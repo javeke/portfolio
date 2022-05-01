@@ -17,8 +17,12 @@
 
                 <div id="theme-toggle">
                     <button class="theme-toggler" @click="toggleTheme">
-                        <i v-if="darkTheme" class="bi bi-sun-fill"></i>
-                        <i v-else  class="bi bi-moon-stars-fill"></i>
+                        <span :class="{'selected':!darkTheme}">
+                            <i class="bi bi-sun-fill"></i>
+                        </span>
+                        <span :class="{'selected':darkTheme}">
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </span>
                     </button>
                 </div>
 
@@ -48,7 +52,7 @@ export default {
     data(){
         return {
             isSidebarShowing: false,
-            darkTheme:''
+            darkTheme:false
         }
     },
     created(){
@@ -166,11 +170,37 @@ a:hover{
 
 .theme-toggler {
     border: none;
-    border-radius: 100%;
+    border-radius: 16px;
     cursor: pointer;
 
     color: var(--primary-color);
-    background-color: var(--primary-bg-color);
+    background-color: rgb(168, 167, 167);
+
+    display: flex;
+    align-items: center;
+    padding: 0.2em;
+}
+
+.theme-toggler span{
+    padding-inline:0.3em;
+    transition: all 0.2s ease-in-out;
+}
+
+.theme-toggler span:first-child{
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.theme-toggler span:nth-child(2){
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.theme-toggler span.selected{
+    border-radius: 12px;
+    background-color: rgb(99, 98, 98);
+    padding-inline:0.5em;
+    color: var(--main-color);
 }
 
 .sidebar-backdrop{
