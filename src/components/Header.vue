@@ -1,15 +1,12 @@
 <template>
     <div class="header">
-        <nav class="navbar-dark bg-dark header__nav">
+        <nav class="header__nav">
             <div class="navbar-container">
-                <button @click="showSidebar" class="menu-btn bg-dark" type="button" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="text-white bi bi-list"></i>
+                <button @click="showSidebar" class="menu-btn" type="button" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="text-primary-color bi bi-list"></i>
                 </button>
                 <h3 class="name">Javier Bryan</h3>
-                <a class="navbar-brand logo" href="/">
-                    <img src="../assets/logo.png" alt="personal-logo" class="d-inline-block align-text-top profile-pic">
-                </a>
-        
+                    
                 <div class="navbar-nav navlinks">
                     <a class="nav-link" :class="{'active':activeLink==''}" aria-current="page" href="/">Home</a>
                     <a class="nav-link" :class="{'active':activeLink=='#about'}" href="#about">About</a>
@@ -17,10 +14,21 @@
                     <a class="nav-link" :class="{'active':activeLink=='#portfolio'}" href="#portfolio">Portfolio</a>
                     <a class="nav-link" href="./Javier Bryan- Resume 2022.pdf" target="_blank">Resume</a>
                 </div>
+
+                <div id="theme-toggle">
+                    <button class="theme-toggler" @click="toggleTheme">
+                        <i v-if="darkTheme" class="bi bi-sun-fill"></i>
+                        <i v-else  class="bi bi-moon-stars-fill"></i>
+                    </button>
+                </div>
+
+                <a class="navbar-brand logo" href="/">
+                    <img src="../assets/logo.png" alt="personal-logo" class="d-inline-block align-text-top profile-pic">
+                </a>
             </div>
         </nav>
         <div @click.stop="closeSidebar" v-if="isSidebarShowing" class="sidebar-backdrop">
-            <div @click.stop class="navbar-nav sidebar bg-dark">
+            <div @click.stop class="navbar-nav sidebar">
                 <div class="sidebar__logo">
                     <img src="../assets/logo.png" alt="personal-logo" class="d-inline-block align-text-top">
                 </div>
@@ -39,7 +47,17 @@
 export default {
     data(){
         return {
-            isSidebarShowing: false
+            isSidebarShowing: false,
+            darkTheme:''
+        }
+    },
+    created(){
+        const storedTheme = localStorage.getItem('dark-theme');
+        if (storedTheme){
+            this.darkTheme = storedTheme === "true";
+        }
+        else {
+            this.darkTheme = matchMedia('(prefers-color-scheme: dark)').matches;
         }
     },
     computed:{
@@ -53,6 +71,17 @@ export default {
         },
         closeSidebar(){
             this.isSidebarShowing = false;
+        },
+        toggleTheme(){
+            if(this.darkTheme){
+                localStorage.setItem('dark-theme', false);
+                this.darkTheme = false;
+            }
+            else{
+                localStorage.setItem('dark-theme', true);
+                this.darkTheme = true;
+            }
+            this.$emit('themeChanged', this.darkTheme);
         }
     }
 }
@@ -82,6 +111,10 @@ export default {
     width: 100vw;
 }
 
+.header__nav {
+    background-color: var(--primary-bg-color);
+}
+
 .navbar-container{
     display: flex;
     justify-content: space-between;
@@ -94,12 +127,14 @@ export default {
     border: 1px solid #777;
     border-radius: 8px;
     padding-inline: 0.7em;
+    background-color: var(--primary-bg-color);
 }
 
 .name{
-    color: white;
+    color: var(--primary-color);
     margin: 0;
     font-size: 1em;
+    font-weight: bold;
 }
 
 .logo {
@@ -112,6 +147,32 @@ export default {
     display: none;
 }
 
+.nav-link{
+    font-size: 14px;
+}
+
+a.nav-link {
+    color: var(--secondary-color);
+}
+
+a.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+a:hover{
+    color: var(--main-color);
+}
+
+.theme-toggler {
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+
+    color: var(--primary-color);
+    background-color: var(--primary-bg-color);
+}
+
 .sidebar-backdrop{
     height: 100vh;
     width: 100vw;
@@ -121,11 +182,13 @@ export default {
 .sidebar {
     display: flex;
     width: 230px;
-    height: 80%;
+    min-height: calc(100vh - 70px);
     -webkit-animation: slide-in 0.4s ease-out;
     -moz-animation: slide-in 0.4s ease-out;
     animation: slide-in 0.4s ease-out;
     border-bottom-right-radius: 16px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
 }
 
 @media screen and (min-width:600px) {
@@ -138,7 +201,6 @@ export default {
     }
 
     .navbar-container{
-        flex-direction: row-reverse;
         justify-content: start;
     }
 
@@ -147,13 +209,20 @@ export default {
     }
 
     .name{
-        order: 1;
+        order: 2;
         font-size: 1.2em;
     }
 
     .navlinks{
+        order: 3;
         display: inherit;
         margin-left: 2em;
+        flex: 1;
+    }
+
+    #theme-toggle {
+        order: 4;
+        padding-inline: 32px;
     }
 }
 
@@ -168,18 +237,13 @@ export default {
 }
 
 .sidebar a {
-    color: #aaa;
+    color: var(--secondary-color);
     transition: all 0.3s ease-in-out;
 }
 
-a.active {
-    color: white;
-    font-weight: bold;
-}
-
 .sidebar__logo > img{
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
 }
 
 .sidebar>.nav-link{
@@ -192,8 +256,8 @@ a.active {
 
 .sidebar__footer{
     margin-top: auto;
-    color: white;
-    font-size: 12px;
+    color: var(--primary-color);
+    font-size: 10px;
 }
 
 </style>
