@@ -45,7 +45,8 @@ export default {
   --primary-color: #000;
   --secondary-color: #2c3e508c;
 
-  --main-color: #efc109;
+  --main-color: #fff;
+  --tertiary-color: #0d6efd;
 
   --primary-bg-color: #fff;
   --primary-bg-color-100: #ffffffa6;
@@ -64,7 +65,7 @@ export default {
   --primary-color: #fff;
   --secondary-color: #ffffff8c;
 
-  --main-color: #ffc107;
+  --main-color: #000;
 
   --primary-bg-color: #212529;
   --primary-bg-color-100: #21252906;

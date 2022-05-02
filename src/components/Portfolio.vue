@@ -19,10 +19,10 @@
                                 <small class="vue">VueJS</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/gpt-3-landing" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/gpt-3-landing" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://javeke.github.io/gpt-3-landing" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://javeke.github.io/gpt-3-landing" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View page
                                 </a>
                             </div>
@@ -50,10 +50,10 @@
                                 <small class="postgres">PostgreSQL</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/groceryscape" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/groceryscape" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://groceryscape.firebaseapp.com" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://groceryscape.firebaseapp.com" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View page
                                 </a>
                             </div>
@@ -80,10 +80,10 @@
                                 <small class="sanity">Sanity</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/gpt-3-landing" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/gpt-3-landing" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://javeke.github.io/gpt-3-landing" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://javeke.github.io/gpt-3-landing" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View page
                                 </a>
                             </div>
@@ -111,10 +111,10 @@
                                 <small class="express">ExpressJS</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/raza-rmps" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/raza-rmps" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View Source Code
                                 </a>
-                                <a href="https://raza-rpms.herokuapp.com/" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://raza-rpms.herokuapp.com/" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
                                 <a href="http://jamaica-star.com/article/news/20200429/uwi-student-develops-healthcare-gadget" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
@@ -141,10 +141,10 @@
                                 <small class="flutter">Flutter</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/PalisadoesFoundation/talawa/tree/master" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/PalisadoesFoundation/talawa/tree/master" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://www.youtube.com/watch?v=gi54H3sGYic&ab_channel=ThePalisadoesFoundation" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://www.youtube.com/watch?v=gi54H3sGYic&ab_channel=ThePalisadoesFoundation" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View Demo Video
                                 </a>
                             </div>
@@ -168,10 +168,10 @@
                                 <small class="flutter">Flutter</small>
                             </div>
                             <div class="card-btn-group">
-                                <a href="https://github.com/javeke/jami" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://github.com/javeke/jami" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://devpost.com/software/jami" class="text-main-color"> <!-- class="btn btn-warning btn-sm" -->
+                                <a href="https://devpost.com/software/jami" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     Read more
                                 </a>
                             </div>

@@ -167,7 +167,7 @@ a.active {
 }
 
 a:hover{
-    color: var(--main-color);
+    color: var(--tertiary-color);
 }
 
 .theme-toggler {
