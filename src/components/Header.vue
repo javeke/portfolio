@@ -55,7 +55,7 @@ export default {
             darkTheme:false
         }
     },
-    created(){
+    mounted(){
         const storedTheme = localStorage.getItem('dark-theme');
         if (storedTheme){
             this.darkTheme = storedTheme === "true";
@@ -63,6 +63,8 @@ export default {
         else {
             this.darkTheme = matchMedia('(prefers-color-scheme: dark)').matches;
         }
+
+        this.$emit('themeChanged', this.darkTheme);
     },
     computed:{
         activeLink(){
