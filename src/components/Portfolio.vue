@@ -40,7 +40,7 @@
                         <div class="card-body">
                             <h5 class="card-title">GroceryScape</h5>
                             <p class="card-text">
-                                A fullstack project built by myself and 3 other developer for an online groceryscape store with an automated ML recommendation API.
+                                A fullstack project built by myself and 3 other developers for an online groceryscape store with an automated ML recommendation API.
                             </p>
                             <div class="card-subtitle techstack">
                                 <small class="html">HTML</small>
