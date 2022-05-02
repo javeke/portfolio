@@ -367,7 +367,7 @@ section{
 
 .services{
   padding: 16px 0;
-  color: var(--primary-bg-color);
+  background-color: var(--primary-bg-color);
   min-height: fit-content;
 }
 
