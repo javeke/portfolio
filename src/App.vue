@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header @themeChanged="handleThemeChange" />
+    <div id="canvas" ref="canvas"></div>
     <router-view/>
     <Footer />
   </div>
@@ -11,11 +12,42 @@
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import { getIpAddress, userVisits } from '@/services/visitor.service';
+import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh } from 'three';
 
 export default {
   components:{
     Header,
     Footer
+  },
+  data(){
+
+    const scene = new Scene();
+
+    const fieldOfVision = 75; //degrees
+    const aspectRatio = window.innerWidth / window.innerHeight;
+    const nearPlane = 0.1;
+    const farPlane = 10000;
+
+    const camera = new PerspectiveCamera(fieldOfVision, aspectRatio, nearPlane, farPlane );
+
+    const renderer =  new WebGLRenderer({ alpha: true});
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    const geometry = new BoxGeometry(4,4,4);
+    const material = new MeshBasicMaterial({ color: 0xebbb1d });
+    const cube = new Mesh(geometry, material);
+    scene.add(cube);
+
+    camera.position.z = 100;
+
+    return {
+      scene,
+      camera,
+      renderer,
+      cube
+    }
   },
   async created(){
     try{
@@ -24,6 +56,11 @@ export default {
       await userVisits(visitor);
     }
     catch(err){}
+  },
+  mounted(){
+    document.getElementById("canvas").appendChild(this.renderer.domElement);
+    document.onscroll = this.moveCamera;
+    this.animate();
   },
   methods:{
     handleThemeChange(newTheme){
@@ -34,7 +71,22 @@ export default {
       else {
         app.classList.remove('dark-theme');
       }
-    }
+    },
+    animate(){
+      requestAnimationFrame(this.animate);
+
+      this.cube.rotation.x += 0.05;
+      this.cube.rotation.y += 0.05;
+
+      this.renderer.render(this.scene, this.camera);
+    },
+    moveCamera(){
+      const speed = document.body.getBoundingClientRect().top;
+
+      this.cube.rotation.z += speed * 0.01;
+
+      this.camera.position.z = (100 + speed * 0.04);
+    } 
   }
 }
 </script>
@@ -54,11 +106,14 @@ export default {
 
   --secondary-bg-color: #eeeeee;
   --secondary-bg-color-700: #eeeeeed6;
-  --primary-bg-image: url('./assets/light-background1.jpg');
 
   --scrollbar-track-color:rgb(33, 37, 41);
   --scrollbar-thumb-color:rgba(83, 87, 91);
   --scrollbar-thumb-hover-color:gray;
+}
+
+:where(#app){
+  --primary-bg-image: url('./assets/light-background1.jpg');
 }
 
 .dark-theme {
@@ -155,6 +210,15 @@ export default {
   #app{
     background: none;
   }
+}
+
+#canvas {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 </style>
