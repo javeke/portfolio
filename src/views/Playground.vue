@@ -4,7 +4,7 @@
 
 <script lang="ts">
 
-import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry,
+import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, CylinderGeometry,
   MeshStandardMaterial, PointLight, PointLightHelper, Mesh, 
   MathUtils, AmbientLight, DoubleSide, Object3D, TextureLoader,
   PlaneGeometry, DirectionalLight, Vector3 } from 'three';
@@ -33,7 +33,7 @@ export default Vue.extend({
     const pointLightHelper = new PointLightHelper(pointLight);
 
     const ambientLight = new AmbientLight(0x404040);
-    const directionalLight =  new DirectionalLight(0xffffff, 0.5);
+    const directionalLight =  new DirectionalLight(0xffffff, 0.9);
 
     const scrollDirection = 0;
 
@@ -46,6 +46,15 @@ export default Vue.extend({
     const journeyPlaque = new Mesh(journeyPlane, journeyMaterial);
 
 
+    const leftDoorHingeGeometry = new CylinderGeometry(5, 5, 100, 32);
+    const leftDoorHingeMaterial = new MeshStandardMaterial( { color: 0xefefef });
+    const leftDoorHinge = new Mesh(leftDoorHingeGeometry, leftDoorHingeMaterial);
+
+    const rightDoorHingeGeometry = new CylinderGeometry(5, 5, 100, 32);
+    const rightDoorHingeMaterial = new MeshStandardMaterial( { color: 0xefefef });
+    const rightDoorHinge = new Mesh(rightDoorHingeGeometry, rightDoorHingeMaterial);
+
+
     const plaqueGeometry = new BoxGeometry(100, 1, 100 );
     const plaqueMaterial = new MeshStandardMaterial({
       side: DoubleSide,
@@ -53,6 +62,15 @@ export default Vue.extend({
     });
 
     const plaque = new Mesh(plaqueGeometry, plaqueMaterial);
+
+
+    const projectOneGeometry = new BoxGeometry(100, 1, 100 );
+    const projectOneMaterial = new MeshStandardMaterial({
+      side: DoubleSide,
+      map: textureLoader.load(profileImage)
+    });
+
+    const projectOne = new Mesh(projectOneGeometry, projectOneMaterial);
 
     return {
       scene,
@@ -65,8 +83,11 @@ export default Vue.extend({
       textureLoader,
       journeyPlaque, 
       plaque,
+      projectOne,
       directionalLight,
-      cameraDirection
+      cameraDirection, 
+      leftDoorHinge,
+      rightDoorHinge
     }
   },
   created(){
@@ -91,12 +112,25 @@ export default Vue.extend({
     this.camera.position.y = 100;
 
     this.scene.add(this.journeyPlaque);
-    this.journeyPlaque.rotateY( MathUtils.degToRad(90));
     this.journeyPlaque.rotateX( MathUtils.degToRad(90));
+
+    this.scene.add( this.leftDoorHinge, this.rightDoorHinge);
+    
+    this.leftDoorHinge.position.y = 50;
+    this.leftDoorHinge.position.x = -115;
+
+    this.rightDoorHinge.position.y = 50;
+    this.rightDoorHinge.position.x = 115;
 
     this.scene.add(this.plaque);
     this.plaque.rotateX(MathUtils.degToRad(-90));
     this.plaque.position.y = 50;
+    this.plaque.position.x = -60;
+
+    this.scene.add(this.projectOne);
+    this.projectOne.rotateX(MathUtils.degToRad(-90));
+    this.projectOne.position.y = 50;
+    this.projectOne.position.x = 60;
 
     this.directionalLight.position = new Vector3(0, 0, 1);
     this.scene.add(this.directionalLight);
@@ -120,9 +154,9 @@ export default Vue.extend({
       this.renderer.render(this.scene, this.camera);
     },
     moveCameraForward(e){
-      let speed = -10;
+      let speed = -30;
       if (e.deltaY < 0){
-        speed = 10;
+        speed *= -1 ;
       }
       this.camera.getWorldDirection(this.cameraDirection);
       this.camera.position.add( this.cameraDirection.multiplyScalar(speed));
