@@ -12,6 +12,9 @@ import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, CylinderGeometry,
 const profileImage = require('../assets/profile.jpg');
 const sceneBackground = require("../assets/scenebackground.jpg");
 
+const hingeTexture = require('../assets/silvertexture.jpg');
+const hingeNormalTexture = require("../assets/silvernormaltexture.jpg");
+
 import Vue from 'vue'
 export default Vue.extend({
   data(){
@@ -28,7 +31,6 @@ export default Vue.extend({
     const renderer =  new WebGLRenderer({ alpha: true});
     const textureLoader = new TextureLoader();
     
-    const pivot =  new Object3D()
     const pointLight = new PointLight(0xdddddd);
     const pointLightHelper = new PointLightHelper(pointLight);
 
@@ -37,25 +39,34 @@ export default Vue.extend({
 
     const scrollDirection = 0;
 
-    const journeyPlane = new PlaneGeometry(10000,10000);
-    const journeyMaterial = new MeshStandardMaterial({ 
+    const journeyPlaneGeometry = new PlaneGeometry(10000,10000);
+    const journeyPlaneMaterial = new MeshStandardMaterial({ 
       side: DoubleSide,
       color: 0xffffff
     });
 
-    const journeyPlaque = new Mesh(journeyPlane, journeyMaterial);
+    const journeyPlane = new Mesh(journeyPlaneGeometry, journeyPlaneMaterial);
 
+    const modelHeight = 300;
+    const modelWidth = 300;
+    const hingeRadius = 5;
+    const modelGap = 10;
 
-    const leftDoorHingeGeometry = new CylinderGeometry(5, 5, 100, 32);
-    const leftDoorHingeMaterial = new MeshStandardMaterial( { color: 0xefefef });
+    const leftDoorHingeGeometry = new CylinderGeometry(hingeRadius, hingeRadius, modelHeight, 32);
+    const leftDoorHingeMaterial = new MeshStandardMaterial({ 
+      color: 0xffffff, map: textureLoader.load(hingeTexture), normalMap: textureLoader.load(hingeNormalTexture)
+    });
     const leftDoorHinge = new Mesh(leftDoorHingeGeometry, leftDoorHingeMaterial);
+    const leftDoorHingePivot =  new Object3D();
 
-    const rightDoorHingeGeometry = new CylinderGeometry(5, 5, 100, 32);
-    const rightDoorHingeMaterial = new MeshStandardMaterial( { color: 0xefefef });
+    const rightDoorHingeGeometry = new CylinderGeometry(hingeRadius, hingeRadius, modelHeight, 32);
+    const rightDoorHingeMaterial = new MeshStandardMaterial( { 
+      color: 0xffffff, map: textureLoader.load(hingeTexture), normalMap: textureLoader.load(hingeNormalTexture)
+    });
     const rightDoorHinge = new Mesh(rightDoorHingeGeometry, rightDoorHingeMaterial);
+    const rightDoorHingePivot =  new Object3D();
 
-
-    const plaqueGeometry = new BoxGeometry(100, 1, 100 );
+    const plaqueGeometry = new BoxGeometry(modelWidth, 1, modelHeight );
     const plaqueMaterial = new MeshStandardMaterial({
       side: DoubleSide,
       map: textureLoader.load(profileImage)
@@ -64,7 +75,7 @@ export default Vue.extend({
     const plaque = new Mesh(plaqueGeometry, plaqueMaterial);
 
 
-    const projectOneGeometry = new BoxGeometry(100, 1, 100 );
+    const projectOneGeometry = new BoxGeometry(modelWidth, 1, modelHeight );
     const projectOneMaterial = new MeshStandardMaterial({
       side: DoubleSide,
       map: textureLoader.load(profileImage)
@@ -76,18 +87,23 @@ export default Vue.extend({
       scene,
       camera,
       renderer,
-      pivot,
       pointLight,
       ambientLight,
       scrollDirection,
       textureLoader,
-      journeyPlaque, 
+      journeyPlane, 
       plaque,
       projectOne,
       directionalLight,
       cameraDirection, 
       leftDoorHinge,
-      rightDoorHinge
+      rightDoorHinge,
+      modelHeight,
+      modelWidth,
+      hingeRadius,
+      modelGap,
+      leftDoorHingePivot,
+      rightDoorHingePivot
     }
   },
   created(){
@@ -99,9 +115,7 @@ export default Vue.extend({
     // add point light helper to scene
     // this.scene.add(this.pointLightHelper);
 
-    // add pivot at the origin to rotate point light
-    this.pivot.add(this.pointLight); 
-    this.scene.add(this.pivot);
+    this.scene.add(this.pointLight);
 
     // add ambient light to scene
     // this.scene.add(this.ambientLight);
@@ -111,26 +125,27 @@ export default Vue.extend({
     this.camera.position.z = 500;
     this.camera.position.y = 100;
 
-    this.scene.add(this.journeyPlaque);
-    this.journeyPlaque.rotateX( MathUtils.degToRad(90));
+    this.scene.add(this.journeyPlane);
+    this.journeyPlane.rotateX( MathUtils.degToRad(90));
 
     this.scene.add( this.leftDoorHinge, this.rightDoorHinge);
     
-    this.leftDoorHinge.position.y = 50;
-    this.leftDoorHinge.position.x = -115;
+    this.leftDoorHinge.position.y = this.modelHeight / 2;
+    this.leftDoorHinge.position.x = this.modelWidth + this.hingeRadius + this.modelGap;
 
-    this.rightDoorHinge.position.y = 50;
-    this.rightDoorHinge.position.x = 115;
+    this.rightDoorHinge.position.y = this.modelHeight / 2;
+    this.rightDoorHinge.position.x = -(this.modelWidth + this.hingeRadius + this.modelGap);
 
-    this.scene.add(this.plaque);
-    this.plaque.rotateX(MathUtils.degToRad(-90));
-    this.plaque.position.y = 50;
-    this.plaque.position.x = -60;
 
-    this.scene.add(this.projectOne);
     this.projectOne.rotateX(MathUtils.degToRad(-90));
-    this.projectOne.position.y = 50;
-    this.projectOne.position.x = 60;
+    this.projectOne.position.x = -this.modelWidth / 2;
+    this.leftDoorHingePivot.add(this.projectOne);
+    this.leftDoorHinge.add(this.leftDoorHingePivot);
+
+    this.plaque.rotateX(MathUtils.degToRad(-90));
+    this.plaque.position.x = this.modelWidth / 2;
+    this.rightDoorHingePivot.add(this.plaque);
+    this.rightDoorHinge.add(this.rightDoorHingePivot);
 
     this.directionalLight.position = new Vector3(0, 0, 1);
     this.scene.add(this.directionalLight);
@@ -151,12 +166,14 @@ export default Vue.extend({
     animate(){
       requestAnimationFrame(this.animate);
 
+      this.oscillateHinge();
+
       this.renderer.render(this.scene, this.camera);
     },
     moveCameraForward(e){
       let speed = -30;
       if (e.deltaY < 0){
-        speed *= -1 ;
+        speed *= -1;
       }
       this.camera.getWorldDirection(this.cameraDirection);
       this.camera.position.add( this.cameraDirection.multiplyScalar(speed));
@@ -169,6 +186,10 @@ export default Vue.extend({
     },
     removePanCamera(){
       document.removeEventListener("mousemove", this.turnCamera);
+    },
+    oscillateHinge(){
+      this.leftDoorHingePivot.rotation.y -= 0.01;
+      this.rightDoorHingePivot.rotation.y += 0.01;
     }
   }
 })
