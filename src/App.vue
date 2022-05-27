@@ -34,7 +34,7 @@ export default {
       else {
         app.classList.remove('dark-theme');
       }
-    }
+    },
   }
 }
 </script>
@@ -54,11 +54,14 @@ export default {
 
   --secondary-bg-color: #eeeeee;
   --secondary-bg-color-700: #eeeeeed6;
-  --primary-bg-image: url('./assets/light-background1.jpg');
 
   --scrollbar-track-color:rgb(33, 37, 41);
   --scrollbar-thumb-color:rgba(83, 87, 91);
   --scrollbar-thumb-hover-color:gray;
+}
+
+:where(#app){
+  --primary-bg-image: url('./assets/light-background1.jpg');
 }
 
 .dark-theme {
@@ -156,5 +159,6 @@ export default {
     background: none;
   }
 }
+
 
 </style>

@@ -12,6 +12,7 @@
                     <a class="nav-link" :class="{'active':activeLink=='#about'}" href="#about">About</a>
                     <a class="nav-link" :class="{'active':activeLink=='#contact'}" href="#contact">Contact</a>
                     <a class="nav-link" :class="{'active':activeLink=='#portfolio'}" href="#portfolio">Portfolio</a>
+                    <a class="nav-link" href="/playground">My Playground</a>
                     <a class="nav-link" href="./Javier Bryan- Resume 2022.pdf" target="_blank">Resume</a>
                 </div>
 
@@ -112,7 +113,7 @@ export default {
 
 .header{
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     width: 100vw;
 }
