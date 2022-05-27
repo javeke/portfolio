@@ -7,17 +7,17 @@
 import { Scene, PerspectiveCamera, WebGLRenderer,
   MeshStandardMaterial, Mesh, PointLight, Quaternion,
   MathUtils, AmbientLight, DoubleSide, TextureLoader,
-  DirectionalLight, Vector3, PlaneGeometry } from 'three';
+  DirectionalLight, Vector3, Vector2, PlaneGeometry } from 'three';
 
 const sceneBackground = require("../assets/scenebackground.jpg");
 
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 
-const mountainHeightTexture = require("../assets/textureMaps/height/mountain.jpg");
-const mountainTexture = require("../assets/textureMaps/mountain.jpg");
-const mountainAlphaTexture = require("../assets/textureMaps/alphaMap/mountain.png");
-const mountainNormalTexture = require("../assets/textureMaps/normal/mountain.jpg");
+const groundTexture = require("../assets/textureMaps/ground.jpg");
+const groundHeightTexture = require("../assets/textureMaps/height/ground.png");
+const groundNormalTexture = require("../assets/textureMaps/normal/ground.png");
+const groundAlphaTexture = require("../assets/textureMaps/alphaMap/ground.png");
 
 import Vue from 'vue'
 export default Vue.extend({
@@ -44,17 +44,19 @@ export default Vue.extend({
     const fontLoader = new FontLoader();
 
 
-    // Texture loads
-    const mountainHeightTextureMap = textureLoader.load(mountainHeightTexture);
-    const mountainTextureMap = textureLoader.load(mountainTexture);
-    const mountainAlphaTextureMap = textureLoader.load(mountainAlphaTexture);
-    const mountainNormalTextureMap = textureLoader.load(mountainNormalTexture);
+    // Texture loads    
+    const groundTextureMap = textureLoader.load(groundTexture);
+    const groundHeightTextureMap = textureLoader.load(groundHeightTexture);
+    const groundNormalTextureMap = textureLoader.load(groundNormalTexture);
+    const groundAlphaTextureMap = textureLoader.load(groundAlphaTexture);
 
     // Lights
-    const topDirectionLight = new DirectionalLight(0xdddddd, 0.9);
+    const topDirectionLight = new DirectionalLight(0xdddddd, 0.7);
     const ambientLight = new AmbientLight(0x404040);
-    const groundDirectionalLight =  new DirectionalLight(0xffffff, 0.9);
+    const groundDirectionalLight =  new DirectionalLight(0xdddddd, 0.9);
     const topPointLight = new PointLight(0xffffff);
+
+    const normalScale = new Vector2(0.75, 0.75);
 
 
     // World Plane
@@ -62,11 +64,13 @@ export default Vue.extend({
     const worldPlaneMaterial = new MeshStandardMaterial({ 
       side: DoubleSide,
       color: 0xd1d3d7,
-      map: mountainTextureMap,
-      displacementMap: mountainHeightTextureMap,
-      alphaMap: mountainAlphaTextureMap,
-      normalMap: mountainNormalTextureMap,
-      displacementScale: 800
+      map: groundTextureMap,
+      displacementMap: groundHeightTextureMap,
+      displacementScale: 1000,
+      // alphaMap: groundAlphaTextureMap,
+      normalMap: groundNormalTextureMap,
+      normalScale: normalScale,
+      // roughness: 0.1
     });
 
     const worldPlane = new Mesh(worldPlaneGeometry, worldPlaneMaterial);
@@ -98,14 +102,14 @@ export default Vue.extend({
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
-    this.camera.position.z = 700;
-    this.camera.position.y = 300;
-    this.camera.rotateX(MathUtils.degToRad(-10));
+    this.camera.position.z = 800;
+    this.camera.position.y = 100;
+    // this.camera.rotateX(MathUtils.degToRad(-5));
     
     
     // Adding to the scene
     this.scene.background = this.textureLoader.load(sceneBackground);
-    // this.scene.add(this.topDirectionLight);
+    this.scene.add(this.topDirectionLight);
     this.scene.add(this.worldPlane);
     this.scene.add(this.groundDirectionalLight);
     this.scene.add(this.topPointLight);
