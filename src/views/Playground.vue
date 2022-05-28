@@ -4,20 +4,20 @@
 
 <script lang="ts">
 
-import { Scene, PerspectiveCamera, WebGLRenderer,
+import { Scene, PerspectiveCamera, WebGLRenderer, RepeatWrapping,
   MeshStandardMaterial, Mesh, PointLight, Quaternion,
   MathUtils, AmbientLight, DoubleSide, TextureLoader,
   DirectionalLight, Vector3, Vector2, PlaneGeometry } from 'three';
 
-const sceneBackground = require("../assets/scenebackground.jpg");
-
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 
-const groundTexture = require("../assets/textureMaps/ground.jpg");
-const groundHeightTexture = require("../assets/textureMaps/height/ground.png");
-const groundNormalTexture = require("../assets/textureMaps/normal/ground.png");
-const groundAlphaTexture = require("../assets/textureMaps/alphaMap/ground.png");
+const lavaTexture = require("../assets/textureMaps/lava.jpg");
+const lavaHeightTexture = require("../assets/textureMaps/height/lava.png");
+const lavaNormalTexture = require("../assets/textureMaps/normal/lava.jpg");
+const lavaAoTexture = require("../assets/textureMaps/ao/lava.jpg");
+const lavaRoughnessTexture = require("../assets/textureMaps/roughness/lava.jpg");
+const alphaTexture = require("../assets/textureMaps/alpha/alpha.png");
 
 import Vue from 'vue'
 export default Vue.extend({
@@ -45,36 +45,40 @@ export default Vue.extend({
 
 
     // Texture loads    
-    const groundTextureMap = textureLoader.load(groundTexture);
-    const groundHeightTextureMap = textureLoader.load(groundHeightTexture);
-    const groundNormalTextureMap = textureLoader.load(groundNormalTexture);
-    const groundAlphaTextureMap = textureLoader.load(groundAlphaTexture);
+    const lavaTextureMap = textureLoader.load(lavaTexture);
+    const lavaHeightTextureMap = textureLoader.load(lavaHeightTexture);
+    const lavaNormalTextureMap = textureLoader.load(lavaNormalTexture);
+    const lavaAoTextureMap = textureLoader.load(lavaAoTexture);
+    const lavaRoughnessTextureMap = textureLoader.load(lavaRoughnessTexture);
+    const alphaTextureMap = textureLoader.load(alphaTexture);
 
     // Lights
-    const topDirectionLight = new DirectionalLight(0xdddddd, 0.7);
+    const topDirectionLight = new DirectionalLight(0xffffff, 0.5);
     const ambientLight = new AmbientLight(0x404040);
     const groundDirectionalLight =  new DirectionalLight(0xdddddd, 0.9);
-    const topPointLight = new PointLight(0xffffff);
+    const topPointLight = new PointLight(0xffffff, 0.7);
 
-    const normalScale = new Vector2(0.75, 0.75);
+    // const normalScale = new Vector2(0.75, 0.75);
 
 
     // World Plane
-    const worldPlaneGeometry = new PlaneGeometry(10000,10000, 1000, 1000);
+    const worldPlaneGeometry = new PlaneGeometry(1024,1024, 100, 100);
     const worldPlaneMaterial = new MeshStandardMaterial({ 
       side: DoubleSide,
-      color: 0xd1d3d7,
-      map: groundTextureMap,
-      displacementMap: groundHeightTextureMap,
-      displacementScale: 1000,
-      // alphaMap: groundAlphaTextureMap,
-      normalMap: groundNormalTextureMap,
-      normalScale: normalScale,
-      // roughness: 0.1
+      map: lavaTextureMap,
+      displacementMap: lavaHeightTextureMap,
+      displacementScale: 100,
+      alphaMap: alphaTextureMap,
+      normalMap: lavaNormalTextureMap,
+      roughnessMap: lavaRoughnessTextureMap,
+      aoMap: lavaAoTextureMap
     });
 
     const worldPlane = new Mesh(worldPlaneGeometry, worldPlaneMaterial);
 
+    const worldPlaneMeshArray = Array(3).fill(0).map(()=>{
+      return Array(3).fill(0).map(()=>worldPlane.clone())
+    });
 
     // Quaternion
     const cameraTransform = new Quaternion();
@@ -94,6 +98,7 @@ export default Vue.extend({
       fontLoader,
 
       worldPlane, 
+      worldPlaneMeshArray,
       cameraTransform
     }
   },
@@ -102,15 +107,14 @@ export default Vue.extend({
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
-    this.camera.position.z = 800;
-    this.camera.position.y = 100;
-    // this.camera.rotateX(MathUtils.degToRad(-5));
+    this.camera.position.z = 600; 
+    this.camera.position.y = 200;
     
     
     // Adding to the scene
-    this.scene.background = this.textureLoader.load(sceneBackground);
+    this.scene.background = 0x000000;
     this.scene.add(this.topDirectionLight);
-    this.scene.add(this.worldPlane);
+    // this.scene.add(this.worldPlane);
     this.scene.add(this.groundDirectionalLight);
     this.scene.add(this.topPointLight);
 
@@ -124,10 +128,18 @@ export default Vue.extend({
     // add ambient light to scene
     // this.scene.add(this.ambientLight);  
 
-    
-    this.worldPlane.rotateX( MathUtils.degToRad(90));
-    this.worldPlane.rotateZ( MathUtils.degToRad(180));
+    console.log(this.worldPlaneMeshArray);
 
+    for(let row =0; row < 3; row++){
+      for (let col =0; col< 3; col++){
+        this.scene.add(this.worldPlaneMeshArray[row][col]);
+        this.worldPlaneMeshArray[row][col].position.x = (1024 * (col-1));
+        this.worldPlaneMeshArray[row][col].position.z = (1024 * (row-1));
+        this.worldPlaneMeshArray[row][col].rotateX(MathUtils.degToRad(-90));
+      }
+    }
+    
+    // this.worldPlane.rotateX( MathUtils.degToRad(90));
 
     this.groundDirectionalLight.position = new Vector3(0, 0, 1);
     

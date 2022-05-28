@@ -61,7 +61,7 @@ export default {
 }
 
 :where(#app){
-  --primary-bg-image: url('./assets/light-background1.jpg');
+  --primary-bg-image: url('./assets/img/light-background1.jpg');
 }
 
 .dark-theme {
@@ -77,7 +77,7 @@ export default {
   --secondary-bg-color: #17191a;
   --secondary-bg-color-700: #17191ab6;
 
-  --primary-bg-image: url('./assets/background2.jpg');
+  --primary-bg-image: url('./assets/img/background2.jpg');
 }
 
 .text-primary-color {

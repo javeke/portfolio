@@ -19,7 +19,7 @@
         </div>
         <div class="row description-row justify-content-center">
           <div class="col-lg-6 col-sm-12 image-col">
-            <img data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="500"  src="../assets/profile.jpg" alt="body-picture" class="body-picture">
+            <img data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="500"  src="../assets/logo/profile.jpg" alt="body-picture" class="body-picture">
           </div>
           <div class="col-lg-6 col-sm-12 description-col">
             <div data-aos="zoom-in" data-aos-easing="ease-in-out-back" data-aos-duration="500" class="description-col-container">
