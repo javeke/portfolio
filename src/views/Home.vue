@@ -115,18 +115,21 @@
     </section>
     <PortfolioHeader/>
     <Portfolio/>
+    <Name3DAnimation></Name3DAnimation>
   </main>
 </template>
 
 <script>
 import Portfolio from '@/components/Portfolio.vue';
 import PortfolioHeader from '@/components/PortfolioHeader.vue';
+import Name3DAnimation from '@/components/Name3DAnimation';
 
 export default {
   name: 'Home',
   components:{
     Portfolio,
-    PortfolioHeader
+    PortfolioHeader,
+    Name3DAnimation
   }
 }
 </script>
