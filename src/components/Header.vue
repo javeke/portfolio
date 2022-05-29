@@ -28,14 +28,14 @@
                 </div>
 
                 <a class="navbar-brand logo" href="/">
-                    <img src="../assets/logo.png" alt="personal-logo" class="d-inline-block align-text-top profile-pic">
+                    <img src="../assets/logo/logo.png" alt="personal-logo" class="d-inline-block align-text-top profile-pic">
                 </a>
             </div>
         </nav>
         <div @click.stop="closeSidebar" v-if="isSidebarShowing" class="sidebar-backdrop">
             <div @click.stop class="navbar-nav sidebar">
                 <div class="sidebar__logo">
-                    <img src="../assets/logo.png" alt="personal-logo" class="d-inline-block align-text-top">
+                    <img src="../assets/logo/logo.png" alt="personal-logo" class="d-inline-block align-text-top">
                 </div>
                 <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink==''}" aria-current="page" href="/"><i class="bi bi-house"></i>Home</a>
                 <a class="nav-link" @click.stop="closeSidebar" :class="{'active':activeLink=='#about'}" href="#about"><i class="bi bi-file-earmark-person"></i>About</a>
