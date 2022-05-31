@@ -10,12 +10,11 @@ import * as THREE from 'three';
 
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
-import { MathUtils, Mesh, MeshPhongMaterial, Vector3 } from 'three';
 
 export default {
   data(){
     // Renderer
-    const renderer =  new THREE.WebGLRenderer({alpha: true});
+    const renderer =  new THREE.WebGLRenderer({ antialias: true});
 
     // Scene
     const scene = new THREE.Scene();
@@ -31,18 +30,22 @@ export default {
     const textureLoader = new THREE.TextureLoader();
     const fontLoader = new FontLoader();
 
+
+    // Texture Loads
+
     // Lights
-    const spotLight = new THREE.SpotLight();
+    const spotLight = new THREE.SpotLight(0xffffff, 2);
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
     const topDirectionLight = new THREE.DirectionalLight(0xffffff);
 
     // World Plane
-    const worldPlaneGeometry = new THREE.PlaneGeometry(512, 512);
-    const worldPlaneMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff,
-      side:THREE.DoubleSide, specular: new THREE.Color(0xffffff), 
-      shininess: 60 
+    const worldPlaneGeometry = new THREE.PlaneGeometry(1024, 1024);
+    const worldPlaneMaterial = new THREE.MeshPhongMaterial({ color: 0x888888,
+      side:THREE.DoubleSide
     });
     const worldPlane =  new THREE.Mesh(worldPlaneGeometry, worldPlaneMaterial);
+
+    const mainGroup = new THREE.Group();
 
     // Misc
     const nameTarget = new THREE.Object3D();
@@ -50,7 +53,7 @@ export default {
     // -1 is left and 1 is right
     const nameTargetDirection = 1;
 
-    const oscillationSpeed = 6;
+    const oscillationSpeed = 12;
 
     const isMouseOn = false;
     const mouseVector = new THREE.Vector3();
@@ -76,6 +79,8 @@ export default {
       oscillationSpeed,
       isMouseOn,
       mouseVector,
+
+      mainGroup,
     } 
   },
   created(){
@@ -86,26 +91,28 @@ export default {
     // this.scene.background = new THREE.Color(0x333333);
 
     // Adding to scene
-    this.scene.add(this.worldPlane);
+    this.scene.add(this.mainGroup);
+    this.mainGroup.add(this.worldPlane);
     this.scene.add(this.spotLight);
     // this.scene.add(this.topDirectionLight);
     // this.scene.add(this.ambientLight);
-    this.spotLight.angle = MathUtils.degToRad(30);
+    this.spotLight.angle = THREE.MathUtils.degToRad(30);
     this.spotLight.shadow.camera.near = 1;
     this.spotLight.shadow.camera.far = 500;
     this.spotLight.shadow.camera.fov = 30;
     this.spotLight.penumbra = 0.5;
 
     // Positioning camera
-    this.mainCamera.position.x = 150;
-    this.mainCamera.position.y = 50;
-    this.mainCamera.position.z = 250;
+    this.mainCamera.position.x = 70;
+    this.mainCamera.position.y = 100;
+    this.mainCamera.position.z = 200;
 
-    this.mainCamera.rotateY(MathUtils.degToRad(40));
+    this.mainCamera.rotateY(THREE.MathUtils.degToRad(20));
+    this.mainCamera.rotateX(THREE.MathUtils.degToRad(-10));
 
     // Positioning world plane
-    this.worldPlane.position.z = 128;
-    this.worldPlane.rotateX(MathUtils.degToRad(90));
+    this.worldPlane.position.z = -64;
+    this.worldPlane.rotateX(THREE.MathUtils.degToRad(90));
 
     // Positioning lights
     this.topDirectionLight.position.y = 1000;
@@ -117,21 +124,21 @@ export default {
         size: 50,
         height: 24
       });
-      const textMaterial = new MeshPhongMaterial({ color: 0xffffff, 
-        specular: new THREE.Color(0xffffff), 
-        shininess: 60 
+      const textMaterial = new THREE.MeshPhongMaterial({ color: 0x888888,
+        side: THREE.DoubleSide,
       });
-      const textMesh = new Mesh(textGeometry, textMaterial);
+      const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+
       textMesh.add(this.nameTarget);
-      // this.nameTarget.position.z = 10;
       this.spotLight.target = this.nameTarget;
       textMesh.position.x = -100;
       textMesh.position.y = 90;
-      this.spotLight.position.y = 100;
+      this.spotLight.position.x = 200;
+      this.spotLight.position.y = 200;
       this.spotLight.position.z = 300;
       
       
-      this.scene.add(textMesh);
+      this.mainGroup.add(textMesh);
       // this.scene.add(new THREE.BoxHelper(textMesh, 0x0000ff));
     });
   },
@@ -164,14 +171,16 @@ export default {
       if(!this.isMouseOn){
         this.oscillateSpotLight();
       }
+
+      this.mainGroup.rotation.y += 0.01;
       
       this.renderer.render(this.scene, this.mainCamera);
     },
     oscillateSpotLight(){
-      if(this.nameTargetDirection > 0 && this.spotLight.target.position.x > 600) {
+      if(this.nameTargetDirection > 0 && this.spotLight.target.position.x > 500) {
         this.nameTargetDirection = -1;
       }
-      else if(this.nameTargetDirection < 0 && this.spotLight.target.position.x < -350) {
+      else if(this.nameTargetDirection < 0 && this.spotLight.target.position.x < -600) {
         this.nameTargetDirection = 1;
       }
 
