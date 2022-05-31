@@ -10,7 +10,7 @@ import * as THREE from 'three';
 
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
-import { MathUtils, Mesh, MeshPhongMaterial } from 'three';
+import { MathUtils, Mesh, MeshPhongMaterial, Vector3 } from 'three';
 
 export default {
   data(){
@@ -52,6 +52,9 @@ export default {
 
     const oscillationSpeed = 6;
 
+    const isMouseOn = false;
+    const mouseVector = new THREE.Vector3();
+
     return {
       renderer,
 
@@ -70,7 +73,9 @@ export default {
       nameTarget,
       nameTargetDirection,
 
-      oscillationSpeed
+      oscillationSpeed,
+      isMouseOn,
+      mouseVector,
     } 
   },
   created(){
@@ -90,7 +95,7 @@ export default {
     this.spotLight.shadow.camera.far = 500;
     this.spotLight.shadow.camera.fov = 30;
     this.spotLight.penumbra = 0.5;
-    
+
     // Positioning camera
     this.mainCamera.position.x = 150;
     this.mainCamera.position.y = 50;
@@ -118,6 +123,7 @@ export default {
       });
       const textMesh = new Mesh(textGeometry, textMaterial);
       textMesh.add(this.nameTarget);
+      // this.nameTarget.position.z = 10;
       this.spotLight.target = this.nameTarget;
       textMesh.position.x = -100;
       textMesh.position.y = 90;
@@ -135,7 +141,8 @@ export default {
     // Setting renderer size
     this.renderer.setSize(sceneContainer.clientWidth, sceneContainer.clientHeight);
 
-    document.getElementById('scene').appendChild(this.renderer.domElement);
+    const sceneParent = document.getElementById('scene');
+    sceneParent.appendChild(this.renderer.domElement);
     window.addEventListener("resize",()=>{
       const sceneContainer = document.getElementById("scene-container");
       this.mainCamera.aspect =  sceneContainer.clientWidth / sceneContainer.clientHeight;
@@ -144,7 +151,9 @@ export default {
       this.renderer.setSize(sceneContainer.clientWidth, sceneContainer.clientHeight);
     });
 
-    document.getElementById('scene').onmousemove = this.focusSpotLightOnHover;
+    sceneParent.onmousemove = this.focusSpotLightOnHover;
+    sceneParent.onmouseenter = this.setMouseOn;
+    sceneParent.onmouseleave = this.setMouseOff;
 
     this.animate();
   },
@@ -152,7 +161,9 @@ export default {
     animate(){
       requestAnimationFrame(this.animate);
 
-      this.oscillateSpotLight();
+      if(!this.isMouseOn){
+        this.oscillateSpotLight();
+      }
       
       this.renderer.render(this.scene, this.mainCamera);
     },
@@ -167,7 +178,30 @@ export default {
       this.spotLight.target.position.x += this.nameTargetDirection * this.oscillationSpeed;
     },
     focusSpotLightOnHover(e){
-      console.log(e);
+      e.preventDefault();
+      
+      const sceneParent = document.getElementById('scene');
+      
+      this.mouseVector.x = (e.offsetX / sceneParent.clientWidth )* 2 - 1;
+      this.mouseVector.y = (e.offsetY / sceneParent.clientHeight )* -2 + 1;
+      this.mouseVector.z = 0.5;
+
+      this.mouseVector.unproject(this.mainCamera); 
+      const direction = this.mouseVector.sub( this.mainCamera.position ).normalize();
+      const distance = -this.mainCamera.position.z / direction.z;
+      const position = this.mainCamera.position.clone().add(direction.multiplyScalar(distance));
+
+      // The name target is position is with reference to the parent element placement
+      this.nameTarget.position.x = position.x + 100; 
+      this.nameTarget.position.y = position.y - 90;
+    },
+    setMouseOn(){
+      this.isMouseOn = true;
+    },
+    setMouseOff(){
+      this.isMouseOn = false;
+      this.nameTarget.position.x = 0; 
+      this.nameTarget.position.y = 0;
     }
   }
 };
