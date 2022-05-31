@@ -53,7 +53,7 @@ export default {
     // -1 is left and 1 is right
     const nameTargetDirection = 1;
 
-    const oscillationSpeed = 12;
+    const oscillationSpeed = 8;
 
     const isMouseOn = false;
     const mouseVector = new THREE.Vector3();
@@ -172,7 +172,7 @@ export default {
         this.oscillateSpotLight();
       }
 
-      this.mainGroup.rotation.y += 0.01;
+      this.mainGroup.rotation.y = (this.mainGroup.rotation.y + 0.01) % (2 * Math.PI);
       
       this.renderer.render(this.scene, this.mainCamera);
     },

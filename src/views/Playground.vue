@@ -2,7 +2,7 @@
   <div id="canvas" ref="canvas"></div>
 </template>
 
-<script lang="ts">
+<script>
 
 import { Scene, PerspectiveCamera, WebGLRenderer,
   MeshStandardMaterial, Mesh, PointLight, Quaternion, SpotLight, Object3D,
@@ -13,7 +13,7 @@ import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 
 // For Debugging purposes
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const lavaTexture = require("../assets/textureMaps/lava.jpg");
 const lavaHeightTexture = require("../assets/textureMaps/height/lava.png");
@@ -21,8 +21,26 @@ const lavaNormalTexture = require("../assets/textureMaps/normal/lava.jpg");
 const lavaAoTexture = require("../assets/textureMaps/ao/lava.jpg");
 const lavaRoughnessTexture = require("../assets/textureMaps/roughness/lava.jpg");
 
-import Vue from 'vue'
-export default Vue.extend({
+const volcanoTexture = require("../assets/textureMaps/volcano.jpg");
+const volcanoHeightTexture = require("../assets/textureMaps/height/volcano.png");
+const volcanoNormalTexture = require("../assets/textureMaps/normal/volcano.jpg");
+const volcanoAoTexture = require("../assets/textureMaps/ao/volcano.jpg");
+const volcanoRoughnessTexture = require("../assets/textureMaps/roughness/volcano.jpg");
+
+const lightLavaTexture = require("../assets/textureMaps/lightLava.jpg");
+const lightLavaHeightTexture = require("../assets/textureMaps/height/lightLava.png");
+const lightLavaNormalTexture = require("../assets/textureMaps/normal/lightLava.jpg");
+const lightLavaAoTexture = require("../assets/textureMaps/ao/lightLava.jpg");
+const lightLavaRoughnessTexture = require("../assets/textureMaps/roughness/lightLava.jpg");
+
+const brittleLavaTexture = require("../assets/textureMaps/brittleLava.jpg");
+const brittleLavaHeightTexture = require("../assets/textureMaps/height/brittleLava.png");
+const brittleLavaNormalTexture = require("../assets/textureMaps/normal/brittleLava.jpg");
+const brittleLavaAoTexture = require("../assets/textureMaps/ao/brittleLava.jpg");
+const brittleLavaRoughnessTexture = require("../assets/textureMaps/roughness/brittleLava.jpg");
+const brittleLavaEmissiveTexture = require("../assets/textureMaps/emissive/brittleLava.jpg");
+
+export default {
   data(){
     // Main Scene
     const scene = new Scene();
@@ -53,6 +71,25 @@ export default Vue.extend({
     const lavaAoTextureMap = textureLoader.load(lavaAoTexture);
     const lavaRoughnessTextureMap = textureLoader.load(lavaRoughnessTexture);
 
+    const volcanoTextureMap = textureLoader.load(volcanoTexture);
+    const volcanoHeightTextureMap = textureLoader.load(volcanoHeightTexture);
+    const volcanoNormalTextureMap = textureLoader.load(volcanoNormalTexture);
+    const volcanoAoTextureMap = textureLoader.load(volcanoAoTexture);
+    const volcanoRoughnessTextureMap = textureLoader.load(volcanoRoughnessTexture);
+
+    const lightLavaTextureMap = textureLoader.load(lightLavaTexture);
+    const lightLavaHeightTextureMap = textureLoader.load(lightLavaHeightTexture);
+    const lightLavaNormalTextureMap = textureLoader.load(lightLavaNormalTexture);
+    const lightLavaAoTextureMap = textureLoader.load(lightLavaAoTexture);
+    const lightLavaRoughnessTextureMap = textureLoader.load(lightLavaRoughnessTexture);
+
+    const brittleLavaTextureMap = textureLoader.load(brittleLavaTexture);
+    const brittleLavaHeightTextureMap = textureLoader.load(brittleLavaHeightTexture);
+    const brittleLavaNormalTextureMap = textureLoader.load(brittleLavaNormalTexture);
+    const brittleLavaAoTextureMap = textureLoader.load(brittleLavaAoTexture);
+    const brittleLavaRoughnessTextureMap = textureLoader.load(brittleLavaRoughnessTexture);
+    const brittleLavaEmissiveTextureMap = textureLoader.load(brittleLavaEmissiveTexture);
+
     // Lights
     const topDirectionLight = new DirectionalLight(0xdddddd, 1.4);
     const ambientLight = new AmbientLight(0x404040);
@@ -61,8 +98,8 @@ export default Vue.extend({
     const messageSpotLight = new SpotLight(0xffffff, 2);
 
     // World Plane
-    const worldPlaneGeometry = new PlaneGeometry(1024,1024, 100, 100);
-    const worldPlaneMaterial = new MeshStandardMaterial({ 
+    const lavaPlaneGeometry = new PlaneGeometry(1024,1024, 100, 100);
+    const lavaPlaneMaterial = new MeshStandardMaterial({ 
       side: DoubleSide,
       map: lavaTextureMap,
       displacementMap: lavaHeightTextureMap,
@@ -73,13 +110,65 @@ export default Vue.extend({
       aoMapIntensity:1
     });
 
-    const worldPlane = new Mesh(worldPlaneGeometry, worldPlaneMaterial);
+    const lavaPlane = new Mesh(lavaPlaneGeometry, lavaPlaneMaterial);
 
-    worldPlane.geometry.attributes.uv2 = worldPlane.geometry.attributes.uv.clone();
+    lavaPlane.geometry.attributes.uv2 = lavaPlane.geometry.attributes.uv.clone();
 
-    const worldPlaneMeshArray = Array(3).fill(0).map(()=>{
-      return Array(3).fill(0).map(()=>worldPlane.clone())
+    const lavaPlaneMeshArray = Array(3).fill(0).map(()=>{
+      return Array(3).fill(0).map(()=>lavaPlane.clone())
     });
+
+
+    const volcanoPlaneGeometry = new PlaneGeometry(1024,1024, 100, 100);
+    const volcanoPlaneMaterial = new MeshStandardMaterial({ 
+      side: DoubleSide,
+      map: volcanoTextureMap,
+      displacementMap: volcanoHeightTextureMap,
+      displacementScale: 60,
+      normalMap: volcanoNormalTextureMap,
+      roughnessMap: volcanoRoughnessTextureMap,
+      aoMap: volcanoAoTextureMap,
+      aoMapIntensity:1
+    });
+
+    const volcanoPlane = new Mesh(volcanoPlaneGeometry, volcanoPlaneMaterial);
+
+    volcanoPlane.geometry.attributes.uv2 = volcanoPlane.geometry.attributes.uv.clone();
+
+
+    const lightLavaPlaneGeometry = new PlaneGeometry(1024,1024, 100, 100);
+    const lightLavaPlaneMaterial = new MeshStandardMaterial({ 
+      side: DoubleSide,
+      map: lightLavaTextureMap,
+      displacementMap: lightLavaHeightTextureMap,
+      displacementScale: 100,
+      normalMap: lightLavaNormalTextureMap,
+      roughnessMap: lightLavaRoughnessTextureMap,
+      aoMap: lightLavaAoTextureMap,
+      aoMapIntensity:1
+    });
+
+    const lightLavaPlane = new Mesh(lightLavaPlaneGeometry, lightLavaPlaneMaterial);
+
+    lightLavaPlane.geometry.attributes.uv2 = lightLavaPlane.geometry.attributes.uv.clone();
+
+
+    const brittleLavaPlaneGeometry = new PlaneGeometry(1024,1024, 100, 100);
+    const brittleLavaPlaneMaterial = new MeshStandardMaterial({ 
+      side: DoubleSide,
+      map: brittleLavaTextureMap,
+      displacementMap: brittleLavaHeightTextureMap,
+      displacementScale: 60,
+      normalMap: brittleLavaNormalTextureMap,
+      roughnessMap: brittleLavaRoughnessTextureMap,
+      aoMap: brittleLavaAoTextureMap,
+      emissiveMap: brittleLavaEmissiveTextureMap,
+      aoMapIntensity:1
+    });
+
+    const brittleLavaPlane = new Mesh(brittleLavaPlaneGeometry, brittleLavaPlaneMaterial);
+
+    brittleLavaPlane.geometry.attributes.uv2 = brittleLavaPlane.geometry.attributes.uv.clone();
 
     // Quaternion
     const cameraTransform = new Quaternion();
@@ -110,9 +199,15 @@ export default Vue.extend({
       textureLoader,
       fontLoader,
 
-      worldPlane, 
-      worldPlaneMeshArray,
+      lavaPlane, 
+      lavaPlaneMeshArray,
       cameraTransform,
+
+      volcanoPlane,
+
+      lightLavaPlane,
+
+      brittleLavaPlane,
 
       welcomeMessage,
       welcomeMessageTarget,
@@ -134,7 +229,7 @@ export default Vue.extend({
     // Adding to the scene
     this.scene.background = 0x000000;
     this.scene.add(this.topDirectionLight);
-    // this.scene.add(this.worldPlane);
+    // this.scene.add(this.lavaPlane);
     // this.scene.add(this.groundDirectionalLight);
     // this.scene.add(this.topPointLight);
     this.scene.add(this.messageSpotLight);
@@ -156,14 +251,30 @@ export default Vue.extend({
 
     for(let row =0; row < 3; row++){
       for (let col =0; col< 3; col++){
-        this.scene.add(this.worldPlaneMeshArray[row][col]);
-        this.worldPlaneMeshArray[row][col].position.x = (1024 * (col-1));
-        this.worldPlaneMeshArray[row][col].position.z = (1024 * (row-1));
-        this.worldPlaneMeshArray[row][col].rotateX(MathUtils.degToRad(-90));
+        this.scene.add(this.lavaPlaneMeshArray[row][col]);
+        this.lavaPlaneMeshArray[row][col].position.x = (1024 * (col-1));
+        this.lavaPlaneMeshArray[row][col].position.z = (1024 * (row-1));
+        this.lavaPlaneMeshArray[row][col].rotateX(MathUtils.degToRad(-90));
       }
     }
+
+    this.scene.add(this.volcanoPlane);
+    this.volcanoPlane.position.x = 0;
+    this.volcanoPlane.position.z = -1024 * 2;
+    this.volcanoPlane.rotateX(MathUtils.degToRad(-90));
+
+    this.scene.add(this.lightLavaPlane);
+    this.lightLavaPlane.position.x = 1024;
+    this.lightLavaPlane.position.z = -1024 * 2;
+    this.lightLavaPlane.rotateX(MathUtils.degToRad(-90));  
     
-    // this.worldPlane.rotateX( MathUtils.degToRad(90));
+    
+    this.scene.add(this.brittleLavaPlane);
+    this.brittleLavaPlane.position.x = -1024;
+    this.brittleLavaPlane.position.z = -1024 * 2;
+    this.brittleLavaPlane.rotateX(MathUtils.degToRad(-90));  
+    
+    // this.lavaPlane.rotateX( MathUtils.degToRad(90));
 
     this.groundDirectionalLight.position = new Vector3(0, 0, 1);
     
@@ -265,7 +376,7 @@ export default Vue.extend({
       this.messageSpotLight.target.position.x += speed * this.welcomeMessageMovingDirection;
     }
   }
-})
+}
 </script>
 
 <style scoped>
