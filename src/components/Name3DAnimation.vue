@@ -53,7 +53,7 @@ export default {
     // -1 is left and 1 is right
     const nameTargetDirection = 1;
 
-    const oscillationSpeed = 8;
+    const oscillationSpeed = 1;
 
     const isMouseOn = false;
     const mouseVector = new THREE.Vector3();
@@ -92,7 +92,7 @@ export default {
 
     // Adding to scene
     this.scene.add(this.mainGroup);
-    this.mainGroup.add(this.worldPlane);
+    // this.mainGroup.add(this.worldPlane);
     this.scene.add(this.spotLight);
     // this.scene.add(this.topDirectionLight);
     // this.scene.add(this.ambientLight);
