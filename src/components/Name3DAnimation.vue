@@ -118,8 +118,8 @@ export default {
     this.topDirectionLight.position.y = 1000;
 
     // Loading font and text mesh
-    this.fontLoader.load("/fonts/Droid_Sans_Regular.json", (font)=>{
-      const textGeometry = new TextGeometry("JAVIER\nBRYAN", {
+    this.fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font)=>{
+      const textGeometry = new TextGeometry("Javier\nBryan", {
         font,
         size: 50,
         height: 24
