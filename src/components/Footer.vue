@@ -6,7 +6,7 @@
 
 <style scoped>
 .footer{
-    padding: 16px 0px ;
+    padding: 32px 0px ;
     font-size: 0.8em;
     color: var(--primary-color);
 }
