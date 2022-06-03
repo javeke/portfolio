@@ -52,7 +52,7 @@ export default {
     const rotationAxis = new THREE.Vector3(0, 1, 0);
     const rotationZAxis = new THREE.Vector3(0,0,1);
 
-    const cubeRotationSpeed = Math.PI/72;
+    const cubeRotationSpeed = Math.PI/144;
     const sphereRotationSpeed = Math.PI/360;
 
     const isMouseNotOver = true;
@@ -91,8 +91,8 @@ export default {
     this.camera.position.z = 128;
 
     // Postioning Logo Cube
-    this.logoCube.rotation.x = THREE.MathUtils.degToRad(45);
-    this.logoCube.rotateOnWorldAxis(this.rotationZAxis, Math.atan(Math.sqrt(2)/2));
+    // this.logoCube.rotation.x = THREE.MathUtils.degToRad(45);
+    // this.logoCube.rotateOnWorldAxis(this.rotationZAxis, Math.atan(Math.sqrt(2)/2));
   }, 
   mounted(){
     const renderContainer = document.getElementById("projects-scene");
