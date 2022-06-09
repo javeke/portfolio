@@ -58,6 +58,8 @@ export default {
   --scrollbar-track-color:rgb(33, 37, 41);
   --scrollbar-thumb-color:rgba(83, 87, 91);
   --scrollbar-thumb-hover-color:gray;
+
+  scroll-behavior: smooth;
 }
 
 :where(#app){

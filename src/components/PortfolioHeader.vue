@@ -1,5 +1,5 @@
 <template>
-    <section class="checkout">
+    <section id="portfolio" class="checkout">
         <h5>Portfolio</h5>
         <h3>Checkout a few of my projects</h3>
     </section>

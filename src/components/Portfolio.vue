@@ -1,5 +1,5 @@
 <template>
-    <section id="portfolio" class="works">
+    <section class="works">
         <div class="container">
             <div class="row mb-5">
                 <div data-aos-duration="500" data-aos="zoom-in-up" data-aos-easing="ease-in-out-back" class="col-md-6 col-sm-12 img-col d-flex justify-content-center">
