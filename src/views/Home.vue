@@ -304,8 +304,23 @@ section{
   flex-wrap: wrap;
 }
 
-.description .social-icons .btn{
+.description .social-icons .btn a{
   border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+}
+
+.description .social-icons .btn a:hover {
+  border-color: var(--tertiary-color);
+  width: 36px;
+  height: 36px;
 }
 
 @media screen and (min-width:800px) {
