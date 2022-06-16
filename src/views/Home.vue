@@ -26,7 +26,7 @@
               <p>A software developer👨‍💻 and electronics hobbyist.</p>
               <p id="contact" >I have a passion for computer systems development and mechanical engineering. I believe in bringing our
                 most creative and imaginative thoughts into reality as I view knowledge as an omnipotent tool when placed in the right hands.
-                I try my best to learn something new everday as I do not believe it's possible to learn it all at once.
+                I try my best to learn something new every day as I do not believe it's possible to learn it all at once.
               </p>
               <a class="text-primary-color" href="./Javier Bryan- Resume 2022.pdf" target="_blank">Check out my resume</a>
               <p class="mt-3">Contact me here!</p>
