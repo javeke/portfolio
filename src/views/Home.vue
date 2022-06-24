@@ -38,7 +38,7 @@
                 <button type="button" class="btn btn-sm"> <a class="text-primary-color" href="https://www.github.com/javeke"> <i class="bi-github"></i> </a></button>
                 <button type="button" class="btn btn-sm"> <a class="text-primary-color" href="https://www.instagram.com/javiertjbryan"> <i class="bi bi-instagram"> </i></a> </button>
                 <button type="button" class="btn btn-sm"> <a class="text-primary-color" href="https://www.twitter.com/javiii_don"> <i class="bi bi-twitter"> </i></a> </button>
-                <button type="button" class="btn btn-sm"> <a class="text-primary-color" href="https://www.linkedin.com/in/javier-bryan-b06510131"> <i class="bi bi-linkedin"> </i></a> </button>
+                <button type="button" class="btn btn-sm"> <a class="text-primary-color" href="https://www.linkedin.com/in/javierbryan"> <i class="bi bi-linkedin"> </i></a> </button>
                 <button type="button" class="btn btn-sm"> <a class="text-primary-color" href="https://www.facebook.com/javierbryan22"> <i class="bi bi-facebook"> </i></a> </button>
               </div>
             </div>
