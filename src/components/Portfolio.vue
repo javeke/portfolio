@@ -162,7 +162,7 @@
                         <div class="card-body">
                             <h5 class="card-title">JAMi Project</h5>
                             <p class="card-text">
-                                I collaborated with a few friends and worked on a mobile app that would be able to allow users to post, report and track criminal activies they encoutered.
+                                I collaborated with a few friends and worked on a mobile app that would be able to allow users to post, report and track suspicious activies they encouter.
                             </p>
                             <div class="card-subtitle techstack">
                                 <small class="flutter">Flutter</small>
