@@ -28,7 +28,7 @@
                 most creative and imaginative thoughts into reality as I view knowledge as an omnipotent tool when placed in the right hands.
                 I try my best to learn something new every day as I do not believe it's possible to learn it all at once.
               </p>
-              <a class="text-primary-color" href="./Javier Bryan- Resume 2022.pdf" target="_blank">Check out my resume</a>
+              <a class="text-primary-color" href="./Javier Bryan- Resume 2023.pdf" target="_blank">Check out my resume</a>
               <p class="mt-3">Contact me here!</p>
               <div class="contacts">
                 <p><span>Email <i class="bi bi-mailbox"></i></span> : <a class="text-primary-color" href="mailto: javierbryan11@gmail.com">javierbryan11@gmail.com</a> </p>

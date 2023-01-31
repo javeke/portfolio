@@ -53,9 +53,6 @@
                                 <a href="https://github.com/javeke/groceryscape" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View project
                                 </a>
-                                <a href="https://groceryscape.firebaseapp.com" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
-                                    View page
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -101,7 +98,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Remote Patient Monitoring System</h5>
                             <p class="card-text">
-                                I worked on an embedded systems project with the aim that the device should be able to monitor the heart rate, temperate and position of a critically ill patient.
+                                I worked on the prototype of an embedded systems project with the aim that the device should be able to monitor the heart rate, temperate and position of a critically ill patient.
                             </p>
                             <div class="card-subtitle techstack">
                                 <small class="html">HTML</small>
@@ -113,9 +110,6 @@
                             <div class="card-btn-group">
                                 <a href="https://github.com/javeke/raza-rmps" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     View Source Code
-                                </a>
-                                <a href="https://raza-rpms.herokuapp.com/" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
-                                    View project
                                 </a>
                                 <a href="http://jamaica-star.com/article/news/20200429/uwi-student-develops-healthcare-gadget" class="text-primary-color"> <!-- class="btn btn-warning btn-sm" -->
                                     Read news article
@@ -162,7 +156,7 @@
                         <div class="card-body">
                             <h5 class="card-title">JAMi Project</h5>
                             <p class="card-text">
-                                I collaborated with a few friends and worked on a mobile app that would be able to allow users to post, report and track suspicious activies they encouter.
+                                I collaborated with a few friends and worked on a prototype of a mobile app that would be able to allow users to post, report and track suspicious activies they encouter.
                             </p>
                             <div class="card-subtitle techstack">
                                 <small class="flutter">Flutter</small>
