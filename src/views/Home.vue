@@ -94,6 +94,8 @@
                 <p class="card-text">MySQL Database</p>
                 <p class="card-text">PostgreSQL Database</p>
                 <p class="card-text">MongoDB</p>
+                <p class="card-text">SQL Server</p> 
+                <p class="card-text">Dotnet</p> 
               </div>
             </div>
           </div>
