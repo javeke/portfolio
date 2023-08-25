@@ -16,7 +16,7 @@ Vue.config.productionTip = false;
 new Vue({
   created(){
     AOS.init({duration:'1500', once:true, disable: function() {
-      var maxWidth = 600;
+      const maxWidth = 600;
       return window.innerWidth < maxWidth;
     }});
   },
