@@ -19,6 +19,16 @@ export const userVisits = async visitor => {
   }
 }
 
+// Added Api call to get visitors
+export const getVisits = async visitor => {
+  try {
+    const res = await instance.get(`${portfolioApi}/visitors`, visitor);
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 export default {
   userVisits,
   getIpAddress
