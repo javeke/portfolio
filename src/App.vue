@@ -1,22 +1,14 @@
 <template>
   <div id="app">
-    <Header @themeChanged="handleThemeChange" />
     <router-view/>
-    <Footer />
   </div>
 </template>
 
 <script>
 
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
 import { getIpAddress, userVisits } from '@/services/visitor.service';
 
 export default {
-  components:{
-    Header,
-    Footer
-  },
   async created(){
     try{
       const { IPv4: ipAddress, country_name: country, state, city  } = await getIpAddress();

@@ -1,24 +1,38 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Home from '../components/Home.vue';
+import Main from '../views/Main.vue';
 import Playground from '../views/Playground.vue';
+import Welcome from '../views/Welcome.vue';
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/2021',
+    name: 'Main',
+    component: Main,
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: Home
+      },
+      {
+        path: '/playground',
+        name: 'Playground',
+        component: Playground
+      },
+    ]
   },
   {
-    path: '/playground',
-    name: 'Playground',
-    component: Playground
+    path: '/welcome',
+    name: 'Welcome',
+    component: Welcome
   },
   {
     path: '*',
-    redirect: '/'
+    redirect: '/2021'
   }
 ]
 
